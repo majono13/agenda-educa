@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <OutputType>Library</OutputType>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\EducaApi.Application\EducaApi.Application.csproj" />
+    <ProjectReference Include="..\EducaApi.Domain\EducaApi.Domain.csproj" />
+    <ProjectReference Include="..\EducaApi.Infra.Data\EducaApi.Infra.Data.csproj" />
+  </ItemGroup>
+
+</Project>

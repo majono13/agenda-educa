@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "3BbIDOfGDhRknyFRDPFJPKJQkwQG329MaQKzrXSvU18=",
+  "Source": "EducaApi.Api",
+  "BasePath": "_content/EducaApi.Api",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
