@@ -17,3 +17,22 @@ D:\Visual studio\codigos\cursos\C#\Api .net 6\Educa\EducaApi.Infra.IoC\obj\Debug
 D:\Visual studio\codigos\cursos\C#\Api .net 6\Educa\EducaApi.Infra.IoC\obj\Debug\net6.0\refint\EducaApi.Infra.IoC.dll
 D:\Visual studio\codigos\cursos\C#\Api .net 6\Educa\EducaApi.Infra.IoC\obj\Debug\net6.0\EducaApi.Infra.IoC.pdb
 D:\Visual studio\codigos\cursos\C#\Api .net 6\Educa\EducaApi.Infra.IoC\obj\Debug\net6.0\ref\EducaApi.Infra.IoC.dll
+C:\Users\Rian\Desktop\pags\angular\agenda-educa\Api\Educa\EducaApi.Infra.IoC\bin\Debug\net6.0\EducaApi.Infra.IoC.deps.json
+C:\Users\Rian\Desktop\pags\angular\agenda-educa\Api\Educa\EducaApi.Infra.IoC\bin\Debug\net6.0\EducaApi.Infra.IoC.dll
+C:\Users\Rian\Desktop\pags\angular\agenda-educa\Api\Educa\EducaApi.Infra.IoC\bin\Debug\net6.0\EducaApi.Infra.IoC.pdb
+C:\Users\Rian\Desktop\pags\angular\agenda-educa\Api\Educa\EducaApi.Infra.IoC\bin\Debug\net6.0\EducaApi.Application.dll
+C:\Users\Rian\Desktop\pags\angular\agenda-educa\Api\Educa\EducaApi.Infra.IoC\bin\Debug\net6.0\EducaApi.Domain.dll
+C:\Users\Rian\Desktop\pags\angular\agenda-educa\Api\Educa\EducaApi.Infra.IoC\bin\Debug\net6.0\EducaApi.Infra.Data.dll
+C:\Users\Rian\Desktop\pags\angular\agenda-educa\Api\Educa\EducaApi.Infra.IoC\bin\Debug\net6.0\EducaApi.Application.pdb
+C:\Users\Rian\Desktop\pags\angular\agenda-educa\Api\Educa\EducaApi.Infra.IoC\bin\Debug\net6.0\EducaApi.Domain.pdb
+C:\Users\Rian\Desktop\pags\angular\agenda-educa\Api\Educa\EducaApi.Infra.IoC\bin\Debug\net6.0\EducaApi.Infra.Data.pdb
+C:\Users\Rian\Desktop\pags\angular\agenda-educa\Api\Educa\EducaApi.Infra.IoC\obj\Debug\net6.0\EducaApi.Infra.IoC.csproj.AssemblyReference.cache
+C:\Users\Rian\Desktop\pags\angular\agenda-educa\Api\Educa\EducaApi.Infra.IoC\obj\Debug\net6.0\EducaApi.Infra.IoC.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Rian\Desktop\pags\angular\agenda-educa\Api\Educa\EducaApi.Infra.IoC\obj\Debug\net6.0\EducaApi.Infra.IoC.AssemblyInfoInputs.cache
+C:\Users\Rian\Desktop\pags\angular\agenda-educa\Api\Educa\EducaApi.Infra.IoC\obj\Debug\net6.0\EducaApi.Infra.IoC.AssemblyInfo.cs
+C:\Users\Rian\Desktop\pags\angular\agenda-educa\Api\Educa\EducaApi.Infra.IoC\obj\Debug\net6.0\EducaApi.Infra.IoC.csproj.CoreCompileInputs.cache
+C:\Users\Rian\Desktop\pags\angular\agenda-educa\Api\Educa\EducaApi.Infra.IoC\obj\Debug\net6.0\EducaApi.Infra.IoC.csproj.CopyComplete
+C:\Users\Rian\Desktop\pags\angular\agenda-educa\Api\Educa\EducaApi.Infra.IoC\obj\Debug\net6.0\EducaApi.Infra.IoC.dll
+C:\Users\Rian\Desktop\pags\angular\agenda-educa\Api\Educa\EducaApi.Infra.IoC\obj\Debug\net6.0\refint\EducaApi.Infra.IoC.dll
+C:\Users\Rian\Desktop\pags\angular\agenda-educa\Api\Educa\EducaApi.Infra.IoC\obj\Debug\net6.0\EducaApi.Infra.IoC.pdb
+C:\Users\Rian\Desktop\pags\angular\agenda-educa\Api\Educa\EducaApi.Infra.IoC\obj\Debug\net6.0\ref\EducaApi.Infra.IoC.dll

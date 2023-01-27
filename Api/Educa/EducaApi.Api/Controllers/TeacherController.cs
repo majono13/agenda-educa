@@ -28,5 +28,40 @@ namespace EducaApi.Api.Controllers
             return BadRequest(result);
         }
 
+        [HttpGet]
+        [Route("{id}")]
+        public async Task<ActionResult> GetTeacherByIdAsync(int id)
+        {
+            var result = await _teacherService.GetTeacherByIdAsync(id);
+
+            if (result.IsSuccess)
+                return Ok(result);
+
+            return BadRequest(result);
+        }
+
+        [HttpPut]
+        public async Task<ActionResult> UpadateTeacherAsync([FromBody] TeacherDto teacherDto)
+        {
+            var result = await _teacherService.UpdateTeacherAsync(teacherDto);
+
+            if (result.IsSuccess)
+                return Ok(result);
+
+            return BadRequest(result);
+        }
+
+        [HttpDelete]
+        [Route("{id}")]
+        public async Task<ActionResult> DeleteTeacherAsync(int id)
+        {
+            var result = await _teacherService.DeleteTeacherAsync(id);
+
+            if (result.IsSuccess)
+                return Ok(result);
+
+            return BadRequest(result);
+        }
+
     }
 }

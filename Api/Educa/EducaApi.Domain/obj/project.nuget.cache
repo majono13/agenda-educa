@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "9waT1f/uBIAl834MwWS5iapeX3YAuM58acnSTNYYhSfukzTo6ct0/BY4U/eTnYqoUJydghucJ5neB8fDzjAZRQ==",
+  "dgSpecHash": "c/T7/q5Jl+5rM1BqOS7uxnx9p6wta51XlIsUE5IBbwXdHxDywFKUVs6vkUFyoP/CbiDK7b/ezSLNZvYebm6t4g==",
   "success": true,
-  "projectFilePath": "D:\\Visual studio\\codigos\\cursos\\C#\\Api .net 6\\Educa\\EducaApi.Domain\\EducaApi.Domain.csproj",
+  "projectFilePath": "C:\\Users\\Rian\\Desktop\\pags\\angular\\agenda-educa\\Api\\Educa\\EducaApi.Domain\\EducaApi.Domain.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

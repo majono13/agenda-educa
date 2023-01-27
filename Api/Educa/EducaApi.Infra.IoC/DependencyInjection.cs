@@ -20,6 +20,7 @@ namespace EducaApi.Infra.IoC
                 .GetConnectionString("DbConnection"), new MySqlServerVersion(new Version())));
 
             services.AddScoped<ITeacherRepository, TeacherRepository>();
+            services.AddScoped<IStudentRepository, StudentRepository>();
             return services;
         }
 
@@ -27,6 +28,7 @@ namespace EducaApi.Infra.IoC
         {
             services.AddAutoMapper(typeof(TeacherProfile));
             services.AddScoped<ITeacherService, TeacherService>();
+            services.AddScoped<IStudentService, StudentService>();
             return services;
         }
 

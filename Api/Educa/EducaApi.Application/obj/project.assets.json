@@ -179,11 +179,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Visual studio\\codigos\\cursos\\C#\\Api .net 6\\Educa\\EducaApi.Application\\EducaApi.Application.csproj",
+      "projectUniqueName": "C:\\Users\\Rian\\Desktop\\pags\\angular\\agenda-educa\\Api\\Educa\\EducaApi.Application\\EducaApi.Application.csproj",
       "projectName": "EducaApi.Application",
-      "projectPath": "D:\\Visual studio\\codigos\\cursos\\C#\\Api .net 6\\Educa\\EducaApi.Application\\EducaApi.Application.csproj",
+      "projectPath": "C:\\Users\\Rian\\Desktop\\pags\\angular\\agenda-educa\\Api\\Educa\\EducaApi.Application\\EducaApi.Application.csproj",
       "packagesPath": "C:\\Users\\Rian\\.nuget\\packages\\",
-      "outputPath": "D:\\Visual studio\\codigos\\cursos\\C#\\Api .net 6\\Educa\\EducaApi.Application\\obj\\",
+      "outputPath": "C:\\Users\\Rian\\Desktop\\pags\\angular\\agenda-educa\\Api\\Educa\\EducaApi.Application\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Rian\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -200,8 +200,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "D:\\Visual studio\\codigos\\cursos\\C#\\Api .net 6\\Educa\\EducaApi.Domain\\EducaApi.Domain.csproj": {
-              "projectPath": "D:\\Visual studio\\codigos\\cursos\\C#\\Api .net 6\\Educa\\EducaApi.Domain\\EducaApi.Domain.csproj"
+            "C:\\Users\\Rian\\Desktop\\pags\\angular\\agenda-educa\\Api\\Educa\\EducaApi.Domain\\EducaApi.Domain.csproj": {
+              "projectPath": "C:\\Users\\Rian\\Desktop\\pags\\angular\\agenda-educa\\Api\\Educa\\EducaApi.Domain\\EducaApi.Domain.csproj"
             }
           }
         }

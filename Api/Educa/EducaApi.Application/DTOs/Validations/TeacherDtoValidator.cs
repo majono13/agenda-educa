@@ -18,9 +18,8 @@ namespace EducaApi.Application.Validations
              .WithMessage("O nome deve ter no mínimo 3 caracteres");
 
             RuleFor(X => X.Firstname)
-             .MaximumLength(50)
-             .WithMessage("O nome deve ter no máximo 50 caracteres");
-
+             .MaximumLength(20)
+             .WithMessage("O nome deve ter no máximo 20 caracteres");
             #endregion
 
             #region Sobrenome
@@ -36,7 +35,6 @@ namespace EducaApi.Application.Validations
             RuleFor(X => X.Lastname)
              .MaximumLength(100)
              .WithMessage("O sobrenome deve ter no máximo 50 caracteres");
-
             #endregion
 
             #region Telefone

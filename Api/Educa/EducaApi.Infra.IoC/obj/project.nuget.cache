@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "4z7Pjj5IQpcbAWzG4kVmnyTLdgH61pWiQhtwX/Ke0RSK7ZHxPhvVC3/q59Gak1eqbFT3vnMjQHFwH3+iZUT2+g==",
+  "dgSpecHash": "RGwkBDVfvDDqZIvSDrZStKTHFYSUezE6e+G/wAiN1ZKDCQ01CYCuvNL/wsQlol5vt1IiKWYKDnig6hWejGYWrQ==",
   "success": true,
-  "projectFilePath": "D:\\Visual studio\\codigos\\cursos\\C#\\Api .net 6\\Educa\\EducaApi.Infra.IoC\\EducaApi.Infra.IoC.csproj",
+  "projectFilePath": "C:\\Users\\Rian\\Desktop\\pags\\angular\\agenda-educa\\Api\\Educa\\EducaApi.Infra.IoC\\EducaApi.Infra.IoC.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Rian\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
     "C:\\Users\\Rian\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.0\\automapper.extensions.microsoft.dependencyinjection.12.0.0.nupkg.sha512",

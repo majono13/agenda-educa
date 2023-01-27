@@ -46,10 +46,10 @@ namespace EducaApi.Infra.Data.Repositories
             return await _db.Students.FirstOrDefaultAsync(s => s.Id == id);
         }
 
-        public async Task<ICollection<Student>> GetStudentsAsync(Teacher teacher)
+        public async Task<ICollection<Student>> GetStudentsAsync(int teacherId)
         {
             return await _db.Students
-                .Where(student => student.TeacherId == teacher.Id)
+                .Where(student => student.TeacherId == teacherId)
                 .ToListAsync();
         }
     }

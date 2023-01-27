@@ -6395,11 +6395,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Visual studio\\codigos\\cursos\\C#\\Api .net 6\\Educa\\EducaApi.Api\\EducaApi.Api.csproj",
+      "projectUniqueName": "C:\\Users\\Rian\\Desktop\\pags\\angular\\agenda-educa\\Api\\Educa\\EducaApi.Api\\EducaApi.Api.csproj",
       "projectName": "EducaApi.Api",
-      "projectPath": "D:\\Visual studio\\codigos\\cursos\\C#\\Api .net 6\\Educa\\EducaApi.Api\\EducaApi.Api.csproj",
+      "projectPath": "C:\\Users\\Rian\\Desktop\\pags\\angular\\agenda-educa\\Api\\Educa\\EducaApi.Api\\EducaApi.Api.csproj",
       "packagesPath": "C:\\Users\\Rian\\.nuget\\packages\\",
-      "outputPath": "D:\\Visual studio\\codigos\\cursos\\C#\\Api .net 6\\Educa\\EducaApi.Api\\obj\\",
+      "outputPath": "C:\\Users\\Rian\\Desktop\\pags\\angular\\agenda-educa\\Api\\Educa\\EducaApi.Api\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Rian\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -6416,8 +6416,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "D:\\Visual studio\\codigos\\cursos\\C#\\Api .net 6\\Educa\\EducaApi.Infra.IoC\\EducaApi.Infra.IoC.csproj": {
-              "projectPath": "D:\\Visual studio\\codigos\\cursos\\C#\\Api .net 6\\Educa\\EducaApi.Infra.IoC\\EducaApi.Infra.IoC.csproj"
+            "C:\\Users\\Rian\\Desktop\\pags\\angular\\agenda-educa\\Api\\Educa\\EducaApi.Infra.IoC\\EducaApi.Infra.IoC.csproj": {
+              "projectPath": "C:\\Users\\Rian\\Desktop\\pags\\angular\\agenda-educa\\Api\\Educa\\EducaApi.Infra.IoC\\EducaApi.Infra.IoC.csproj"
             }
           }
         }

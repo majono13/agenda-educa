@@ -13,3 +13,18 @@ D:\Visual studio\codigos\cursos\C#\Api .net 6\Educa\EducaApi.Application\obj\Deb
 D:\Visual studio\codigos\cursos\C#\Api .net 6\Educa\EducaApi.Application\obj\Debug\net6.0\refint\EducaApi.Application.dll
 D:\Visual studio\codigos\cursos\C#\Api .net 6\Educa\EducaApi.Application\obj\Debug\net6.0\EducaApi.Application.pdb
 D:\Visual studio\codigos\cursos\C#\Api .net 6\Educa\EducaApi.Application\obj\Debug\net6.0\ref\EducaApi.Application.dll
+C:\Users\Rian\Desktop\pags\angular\agenda-educa\Api\Educa\EducaApi.Application\bin\Debug\net6.0\EducaApi.Application.deps.json
+C:\Users\Rian\Desktop\pags\angular\agenda-educa\Api\Educa\EducaApi.Application\bin\Debug\net6.0\EducaApi.Application.dll
+C:\Users\Rian\Desktop\pags\angular\agenda-educa\Api\Educa\EducaApi.Application\bin\Debug\net6.0\EducaApi.Application.pdb
+C:\Users\Rian\Desktop\pags\angular\agenda-educa\Api\Educa\EducaApi.Application\bin\Debug\net6.0\EducaApi.Domain.dll
+C:\Users\Rian\Desktop\pags\angular\agenda-educa\Api\Educa\EducaApi.Application\bin\Debug\net6.0\EducaApi.Domain.pdb
+C:\Users\Rian\Desktop\pags\angular\agenda-educa\Api\Educa\EducaApi.Application\obj\Debug\net6.0\EducaApi.Application.csproj.AssemblyReference.cache
+C:\Users\Rian\Desktop\pags\angular\agenda-educa\Api\Educa\EducaApi.Application\obj\Debug\net6.0\EducaApi.Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Rian\Desktop\pags\angular\agenda-educa\Api\Educa\EducaApi.Application\obj\Debug\net6.0\EducaApi.Application.AssemblyInfoInputs.cache
+C:\Users\Rian\Desktop\pags\angular\agenda-educa\Api\Educa\EducaApi.Application\obj\Debug\net6.0\EducaApi.Application.AssemblyInfo.cs
+C:\Users\Rian\Desktop\pags\angular\agenda-educa\Api\Educa\EducaApi.Application\obj\Debug\net6.0\EducaApi.Application.csproj.CoreCompileInputs.cache
+C:\Users\Rian\Desktop\pags\angular\agenda-educa\Api\Educa\EducaApi.Application\obj\Debug\net6.0\EducaApi.Application.csproj.CopyComplete
+C:\Users\Rian\Desktop\pags\angular\agenda-educa\Api\Educa\EducaApi.Application\obj\Debug\net6.0\EducaApi.Application.dll
+C:\Users\Rian\Desktop\pags\angular\agenda-educa\Api\Educa\EducaApi.Application\obj\Debug\net6.0\refint\EducaApi.Application.dll
+C:\Users\Rian\Desktop\pags\angular\agenda-educa\Api\Educa\EducaApi.Application\obj\Debug\net6.0\EducaApi.Application.pdb
+C:\Users\Rian\Desktop\pags\angular\agenda-educa\Api\Educa\EducaApi.Application\obj\Debug\net6.0\ref\EducaApi.Application.dll

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Zy65tXy6fZann/xBBQN185Q43T3g2GflqDW64dkK8cGjth2pBeS4Rw74kvELYNhA1ewA0NmeICcDC8J5w/Holw==",
+  "dgSpecHash": "KDizdwCApDualkZQ5qKiegueuIqYD/nfQUTP9g/4toKO1a0x3Av9u7UjC/QzRwUqeq7RuyCpY8qTLVTouylaWA==",
   "success": true,
-  "projectFilePath": "D:\\Visual studio\\codigos\\cursos\\C#\\Api .net 6\\Educa\\EducaApi.Application\\EducaApi.Application.csproj",
+  "projectFilePath": "C:\\Users\\Rian\\Desktop\\pags\\angular\\agenda-educa\\Api\\Educa\\EducaApi.Application\\EducaApi.Application.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Rian\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
     "C:\\Users\\Rian\\.nuget\\packages\\fluentvalidation\\11.4.0\\fluentvalidation.11.4.0.nupkg.sha512",

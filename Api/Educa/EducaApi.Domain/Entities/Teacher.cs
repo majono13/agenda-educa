@@ -38,7 +38,7 @@ namespace EducaApi.Domain.Entities
             #region Nome
             DomainValidationException.When(string.IsNullOrEmpty(firstname), "Informe o nome");
             DomainValidationException.When(firstname.Length < 2, "O nome deve ter no mínimo 3 caracteres");
-            DomainValidationException.When(firstname.Length > 50, "O nome deve ter no máximo 50 caracteres");
+            DomainValidationException.When(firstname.Length > 20, "O nome deve ter no máximo 20 caracteres");
             #endregion
 
             #region Sobrenome
