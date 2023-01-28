@@ -4,6 +4,7 @@ using EducaApi.Application.DTOs.Validations;
 using EducaApi.Application.Services.Interfaces;
 using EducaApi.Application.Validations;
 using EducaApi.Domain.Entities;
+using EducaApi.Domain.FiltersDb;
 using EducaApi.Domain.Repositories;
 
 namespace EducaApi.Application.Services
@@ -52,6 +53,17 @@ namespace EducaApi.Application.Services
            await _studentRespository.DeleteStudentAsync(student);
 
             return ResultService.Ok($"Aluno/a: {student.Name} deletado com sucesso!");
+        }
+
+        public async Task<ResultService<PageBaseResponseDTO<StudentDTO>>> GetPagedAsync(StudentFilterDb studentFilterDb,int teacherId)
+        {
+            //Retorna dados paginados
+            var studentPaged = await _studentRespository.GetPagedAsync(studentFilterDb, teacherId);
+            //Mapeamento para o DTO
+            var result = new PageBaseResponseDTO<StudentDTO>(
+                    studentPaged.TotalRegisters, _mapper.Map<List<StudentDTO>>(studentPaged.Data));
+
+            return ResultService.Ok(result);
         }
 
         public async Task<ResultService<StudentDTO>> GetStudentByIdAsync(int id)

@@ -1,4 +1,5 @@
 ﻿using EducaApi.Domain.Entities;
+using EducaApi.Domain.FiltersDb;
 
 namespace EducaApi.Domain.Repositories
 {
@@ -9,5 +10,6 @@ namespace EducaApi.Domain.Repositories
         Task<Student> CreateStudentAync(Student student);
         Task EditStudentAsync(Student student);
         Task DeleteStudentAsync(Student student);
+        Task<PageBaseResponse<Student>> GetPagedAsync(StudentFilterDb request, int teacherId);
     }
 }

@@ -1,12 +1,8 @@
 ﻿using EducaApi.Domain.Entities;
+using EducaApi.Domain.FiltersDb;
 using EducaApi.Domain.Repositories;
 using EducaApi.Infra.Data.Context;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace EducaApi.Infra.Data.Repositories
 {
@@ -39,6 +35,19 @@ namespace EducaApi.Infra.Data.Repositories
         {
             _db.Update(student);
             await _db.SaveChangesAsync();
+        }
+
+        public async Task<PageBaseResponse<Student>> GetPagedAsync(StudentFilterDb request, int teacherId)
+        {
+            //Query com todos os alunos
+            var students = _db.Students.AsQueryable().Where(x => x.TeacherId == teacherId);
+
+            //Realiza filtro de busca caso tenha sido passado
+            if (!string.IsNullOrEmpty(request.Name))
+                students = students.Where(x => x.Name.Contains(request.Name));
+
+            return await PageBaseResponseHelper.GetResponseAsync<PageBaseResponse<Student>, Student>(students, request);
+
         }
 
         public async Task<Student> GetStudentByIdAsync(int id)

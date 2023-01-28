@@ -1,4 +1,5 @@
 ﻿using EducaApi.Application.DTOs;
+using EducaApi.Domain.FiltersDb;
 
 namespace EducaApi.Application.Services.Interfaces
 {
@@ -9,5 +10,6 @@ namespace EducaApi.Application.Services.Interfaces
         Task<ResultService<ICollection<StudentDTO>>> GetStudentsAsync(int teacherId);
         Task<ResultService> UpdateStudentAsync(StudentDTO studentDTO);
         Task<ResultService> DeleteStudentAsync(int id);
+        Task<ResultService<PageBaseResponseDTO<StudentDTO>>> GetPagedAsync(StudentFilterDb studentFilterDb, int teacherId);
     }
 }

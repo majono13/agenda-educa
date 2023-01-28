@@ -1,5 +1,6 @@
 ﻿using EducaApi.Application.DTOs;
 using EducaApi.Application.Services.Interfaces;
+using EducaApi.Domain.FiltersDb;
 using Microsoft.AspNetCore.Mvc;
 
 namespace EducaApi.Api.Controllers
@@ -43,6 +44,18 @@ namespace EducaApi.Api.Controllers
         public async Task<ActionResult> GetStudentByIdAsync(int id)
         {
             var result = await _studentService.GetStudentByIdAsync(id);
+
+            if (result.IsSuccess)
+                return Ok(result);
+
+            return BadRequest(result);
+        }
+
+        [HttpGet]
+        [Route("pagination/{teacherId}")]
+        public async Task<ActionResult> GetStudentsPaged([FromQuery] StudentFilterDb studentFilterDb, int teacherId)
+        {
+            var result = await _studentService.GetPagedAsync( studentFilterDb, teacherId);
 
             if (result.IsSuccess)
                 return Ok(result);
