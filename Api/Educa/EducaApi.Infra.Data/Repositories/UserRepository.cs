@@ -16,6 +16,7 @@ namespace EducaApi.Infra.Data.Repositories
             _db = db;
         }
 
+        /** Método assíncrono para criar novo usuário **/
         public async Task<User> CreateUserAsync(User user)
         {
             var newUserWithPasswordHash = HashPassword(user);
@@ -25,22 +26,20 @@ namespace EducaApi.Infra.Data.Repositories
             return newUserWithPasswordHash;
         }
 
+        //Método privado para realizar hash da senha enviada pelo front
         private User HashPassword(User user)
         {
             var passwordHash = new PasswordHasher<User>();
             return new User(user.Email, passwordHash.HashPassword(user, user.Password));
         }
 
-        public async Task<User> GetUserByEmailAndPasswordAsync(string email, string password)
-        {
-            throw new NotImplementedException();
-        }
-
+        /** Método assíncrono para buscar usuário pelo e-mail **/
         public async Task<User> GetUserByEmailAsync(string email)
         {
             return await _db.Users.FirstOrDefaultAsync(x => x.Email == email);
         }
 
+        /** Método assíncrono para logar usuário e retornar dadis do professor vinculado ao login **/
         public async Task<Teacher> LoginAsync(User user)
         {
             //Verifica se existe usuário com email enviado

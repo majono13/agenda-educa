@@ -18,6 +18,7 @@ namespace EducaApi.Infra.Data.Repositories
             _db = db;
         }
 
+        /** Método assíncrono para criar novo professor **/
         public async Task<Teacher> CreateTeacherAync(Teacher teacher)
         {
             _db.Add(teacher);
@@ -25,18 +26,21 @@ namespace EducaApi.Infra.Data.Repositories
             return teacher;
         }
 
+        /** Método assíncrono para deletar professor **/
         public async Task DeleteTeacherAsync(Teacher teacher)
         {
             _db.Remove(teacher);
             await _db.SaveChangesAsync();
         }
 
+        /** Método assíncrono para editar professor **/
         public async Task EditTeacherAsync(Teacher teacher)
         {
             _db.Update(teacher);
             await _db.SaveChangesAsync();
         }
 
+        /** Método assíncrono para buscar professor por id **/
         public async Task<Teacher> GetTeacherByIdAsync(int id)
         {
             return await _db.Teachers.FirstOrDefaultAsync(teacher => teacher.Id == id);

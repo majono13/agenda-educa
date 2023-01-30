@@ -22,6 +22,7 @@ namespace EducaApi.Application.Services
             _mapper = mapper;
         }
 
+        /** Método assíncrono para criar novo usuário **/
         public async Task<ResultService<UserDTO>> CreateUserAsync(UserDTO userDTO)
         {
             //Validação do parâmetro
@@ -42,6 +43,7 @@ namespace EducaApi.Application.Services
             return ResultService.Ok<UserDTO>(_mapper.Map<UserDTO>(data));
         }
 
+        /** Método assíncrono para logar usuário **/
         public async Task<ResultService<TeacherDto>> LoginAsync(UserDTO userDTO)
         {
             if (userDTO == null)

@@ -2,6 +2,8 @@
 
 namespace EducaApi.Application.Services
 {
+
+    //Classe genérica para retorno de resposta ao front
     public class ResultService
     {
         public bool IsSuccess { get; set; }

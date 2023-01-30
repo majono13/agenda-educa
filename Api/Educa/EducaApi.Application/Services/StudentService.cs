@@ -23,6 +23,7 @@ namespace EducaApi.Application.Services
             _mapper = mapper;
         }
 
+        /** Método assíncrono para criar novo aluno**/
         public async Task<ResultService<StudentDTO>> CreateStudentAsync(StudentDTO studentDTO)
         {
             //Validação do parâmetro
@@ -43,6 +44,7 @@ namespace EducaApi.Application.Services
             return ResultService.Ok<StudentDTO>(_mapper.Map<StudentDTO>(data));
         }
 
+        /** Método assíncrono para deletar aluno salvo no banco de dados **/
         public async Task<ResultService> DeleteStudentAsync(int id)
         {
             var student = await _studentRespository.GetStudentByIdAsync(id);
@@ -55,6 +57,7 @@ namespace EducaApi.Application.Services
             return ResultService.Ok($"Aluno/a: {student.Name} deletado com sucesso!");
         }
 
+        /** Método assíncrono buscar alunos no banco de dados de forma paginada **/
         public async Task<ResultService<PageBaseResponseDTO<StudentDTO>>> GetPagedAsync(StudentFilterDb studentFilterDb,int teacherId)
         {
             //Retorna dados paginados
@@ -66,6 +69,7 @@ namespace EducaApi.Application.Services
             return ResultService.Ok(result);
         }
 
+        /** Método assíncrono para buscar aluno por id **/
         public async Task<ResultService<StudentDTO>> GetStudentByIdAsync(int id)
         {
             var student = await _studentRespository.GetStudentByIdAsync(id);
@@ -76,6 +80,7 @@ namespace EducaApi.Application.Services
             return ResultService.Ok<StudentDTO>(_mapper.Map<StudentDTO>(student));
         }
 
+        /** Método assíncrono para buscar alunos de determinado professor **/
         public async Task<ResultService<ICollection<StudentDTO>>> GetStudentsAsync(int teacherId)
         {
             var students = await _studentRespository.GetStudentsAsync(teacherId);
@@ -87,6 +92,7 @@ namespace EducaApi.Application.Services
             return ResultService.Ok(_mapper.Map<ICollection<StudentDTO>>(students));
         }
 
+        /** Método assíncrono para editar aluno salvo no banco de dados **/
         public async Task<ResultService> UpdateStudentAsync(StudentDTO studentDTO)
         {
             //Validação do parâmetro

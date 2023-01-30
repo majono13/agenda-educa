@@ -16,6 +16,7 @@ namespace EducaApi.Api.Controllers
             _userService = userService;
         }
 
+        //Método post para criar novo usuário
         [HttpPost]
         public async Task<ActionResult> CreateUserAsync([FromBody] UserDTO userDto)
         {
@@ -27,6 +28,7 @@ namespace EducaApi.Api.Controllers
             return BadRequest(result);
         }
 
+        //Método post para logar usuário
         [HttpPost]
         [Route("login")]
         public async Task<ActionResult> LoginAsync([FromBody] UserDTO userDto)

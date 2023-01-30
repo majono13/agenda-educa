@@ -21,6 +21,7 @@ namespace EducaApi.Application.Services
             _mapper = mapper;
         }
 
+       /** Método assíncrono para criar novo professor **/
         public async Task<ResultService<TeacherDto>> CreateTeacherAsync(TeacherDto teacherDto)
         {
             //Validação do parâmetro
@@ -39,6 +40,7 @@ namespace EducaApi.Application.Services
             return ResultService.Ok<TeacherDto>(_mapper.Map<TeacherDto>(data));
         }
 
+        /** Método assíncrono para deletar professor salvo no banco de dados **/
         public async Task<ResultService> DeleteTeacherAsync(int id)
         {
             var teacher = await _teacherRepository.GetTeacherByIdAsync(id);
@@ -51,6 +53,7 @@ namespace EducaApi.Application.Services
             return ResultService.Ok("Dado removido do banco de dados");
         }
 
+        /** Método assíncrono para buscar professor por id **/
         public async Task<ResultService<TeacherDto>> GetTeacherByIdAsync(int id)
         {
             var result = await _teacherRepository.GetTeacherByIdAsync(id);
@@ -59,6 +62,7 @@ namespace EducaApi.Application.Services
             return ResultService.Ok(_mapper.Map<TeacherDto>(result));
         }
 
+        /** Método assíncrono para editar professor **/
         public async Task<ResultService> UpdateTeacherAsync(TeacherDto teacherDto)
         {
             //Verifica se o parâmetro é válido antes de autualizar

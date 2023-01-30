@@ -17,6 +17,7 @@ namespace EducaApi.Api.Controllers
             _teacherService = teacherService;
         }
 
+        //Método post para criar professor
         [HttpPost]
         public async Task<ActionResult> CreateTeacher([FromBody] TeacherDto teacherDto)
         {
@@ -28,6 +29,7 @@ namespace EducaApi.Api.Controllers
             return BadRequest(result);
         }
 
+        //Método get para buscar professor por id
         [HttpGet]
         [Route("{id}")]
         public async Task<ActionResult> GetTeacherByIdAsync(int id)
@@ -40,6 +42,7 @@ namespace EducaApi.Api.Controllers
             return BadRequest(result);
         }
 
+        //Método put para editar professor salvo no banco
         [HttpPut]
         public async Task<ActionResult> UpadateTeacherAsync([FromBody] TeacherDto teacherDto)
         {
@@ -51,6 +54,7 @@ namespace EducaApi.Api.Controllers
             return BadRequest(result);
         }
 
+        //Método delete para deletar professor salvo no banco
         [HttpDelete]
         [Route("{id}")]
         public async Task<ActionResult> DeleteTeacherAsync(int id)

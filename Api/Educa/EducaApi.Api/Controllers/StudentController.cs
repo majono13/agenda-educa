@@ -16,6 +16,7 @@ namespace EducaApi.Api.Controllers
             _studentService = studentService;
         }
 
+        //Método post para criação de Alunos
         [HttpPost]
         public async Task<ActionResult> CreateStudentAsync([FromBody] StudentDTO studentDto)
         {
@@ -27,6 +28,7 @@ namespace EducaApi.Api.Controllers
             return BadRequest(result);
         }
 
+        //Método get para buscar alunos relacionados a determinado professor
         [HttpGet]
         [Route("get-students/{teacherId}")]
         public async Task<ActionResult> GetStudentsAsync(int teacherId)
@@ -39,6 +41,7 @@ namespace EducaApi.Api.Controllers
             return BadRequest(result);
         }
 
+        //Método get para buscar aluno por id
         [HttpGet]
         [Route("get-student/{id}")]
         public async Task<ActionResult> GetStudentByIdAsync(int id)
@@ -51,6 +54,7 @@ namespace EducaApi.Api.Controllers
             return BadRequest(result);
         }
 
+        //Método get para buscar alunos de maneira paginada
         [HttpGet]
         [Route("pagination/{teacherId}")]
         public async Task<ActionResult> GetStudentsPaged([FromQuery] StudentFilterDb studentFilterDb, int teacherId)
@@ -63,6 +67,7 @@ namespace EducaApi.Api.Controllers
             return BadRequest(result);
         }
 
+        //Método put para Editar aluno salvo no banco
         [HttpPut]
         public async Task<ActionResult> UpdateStudentAsync([FromBody] StudentDTO studentDto)
         {
@@ -74,6 +79,7 @@ namespace EducaApi.Api.Controllers
             return BadRequest(result);
         }
 
+        //Método delete para deletar aluno salvo no banco
         [HttpDelete]
         [Route("{id}")]
         public async Task<ActionResult> CreateStudentAsync(int id)
