@@ -5,11 +5,26 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace EducaApi.Infra.Data.Migrations
 {
-    public partial class CreateDatabase : Migration
+    public partial class ReCreateDatabaseTables : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.AlterDatabase()
+                .Annotation("MySql:CharSet", "utf8mb4");
+
+            migrationBuilder.CreateTable(
+                name: "Users",
+                columns: table => new
+                {
+                    Email = table.Column<string>(type: "varchar(95)", nullable: false)
+                        .Annotation("MySql:CharSet", "utf8mb4"),
+                    Password = table.Column<string>(type: "longtext", nullable: false)
+                        .Annotation("MySql:CharSet", "utf8mb4")
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Users", x => x.Email);
+                })
                 .Annotation("MySql:CharSet", "utf8mb4");
 
             migrationBuilder.CreateTable(
@@ -23,11 +38,19 @@ namespace EducaApi.Infra.Data.Migrations
                     Lastname = table.Column<string>(type: "longtext", nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     Phone = table.Column<string>(type: "longtext", nullable: false)
+                        .Annotation("MySql:CharSet", "utf8mb4"),
+                    Email = table.Column<string>(type: "varchar(95)", nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4")
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Teachers", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Teachers_Users_Email",
+                        column: x => x.Email,
+                        principalTable: "Users",
+                        principalColumn: "Email",
+                        onDelete: ReferentialAction.Cascade);
                 })
                 .Annotation("MySql:CharSet", "utf8mb4");
 
@@ -61,6 +84,12 @@ namespace EducaApi.Infra.Data.Migrations
                 name: "IX_Students_TeacherId",
                 table: "Students",
                 column: "TeacherId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Teachers_Email",
+                table: "Teachers",
+                column: "Email",
+                unique: true);
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
@@ -70,6 +99,9 @@ namespace EducaApi.Infra.Data.Migrations
 
             migrationBuilder.DropTable(
                 name: "Teachers");
+
+            migrationBuilder.DropTable(
+                name: "Users");
         }
     }
 }

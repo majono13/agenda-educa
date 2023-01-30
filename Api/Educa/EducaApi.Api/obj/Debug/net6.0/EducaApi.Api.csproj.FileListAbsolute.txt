@@ -92,3 +92,8 @@ C:\Users\Rian\Desktop\pags\angular\agenda-educa\Api\Educa\EducaApi.Api\obj\Debug
 C:\Users\Rian\Desktop\pags\angular\agenda-educa\Api\Educa\EducaApi.Api\obj\Debug\net6.0\EducaApi.Api.pdb
 C:\Users\Rian\Desktop\pags\angular\agenda-educa\Api\Educa\EducaApi.Api\obj\Debug\net6.0\EducaApi.Api.genruntimeconfig.cache
 C:\Users\Rian\Desktop\pags\angular\agenda-educa\Api\Educa\EducaApi.Api\obj\Debug\net6.0\ref\EducaApi.Api.dll
+C:\Users\Rian\Desktop\pags\angular\agenda-educa\Api\Educa\EducaApi.Api\bin\Debug\net6.0\Microsoft.AspNetCore.Cryptography.Internal.dll
+C:\Users\Rian\Desktop\pags\angular\agenda-educa\Api\Educa\EducaApi.Api\bin\Debug\net6.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+C:\Users\Rian\Desktop\pags\angular\agenda-educa\Api\Educa\EducaApi.Api\bin\Debug\net6.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+C:\Users\Rian\Desktop\pags\angular\agenda-educa\Api\Educa\EducaApi.Api\bin\Debug\net6.0\Microsoft.Extensions.Identity.Core.dll
+C:\Users\Rian\Desktop\pags\angular\agenda-educa\Api\Educa\EducaApi.Api\bin\Debug\net6.0\Microsoft.Extensions.Identity.Stores.dll

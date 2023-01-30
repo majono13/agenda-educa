@@ -8,6 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="6.0.1" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.1" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="6.0.1">
       <PrivateAssets>all</PrivateAssets>
@@ -23,6 +24,10 @@
 
   <ItemGroup>
     <ProjectReference Include="..\EducaApi.Domain\EducaApi.Domain.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Migrations\" />
   </ItemGroup>
 
 </Project>

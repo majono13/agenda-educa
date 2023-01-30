@@ -13,7 +13,9 @@ namespace EducaApi.Domain.Entities
         public string Firstname { get; private set; }
         public string Lastname { get; private set; }
         public string Phone { get; private set; }
+        public string Email { get; private set; }
         public virtual ICollection<Student> Students { get; private set; }
+        public virtual User User { get; private set; }
 
         public Teacher()
         {}
@@ -56,6 +58,7 @@ namespace EducaApi.Domain.Entities
             Firstname = firstname;
             Lastname = lastname;
             Phone = phone;
+
         }
     }
 }

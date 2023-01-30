@@ -52,6 +52,10 @@ namespace EducaApi.Infra.Data.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasColumnType("varchar(95)");
+
                     b.Property<string>("Firstname")
                         .IsRequired()
                         .HasColumnType("longtext");
@@ -66,7 +70,24 @@ namespace EducaApi.Infra.Data.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("Email")
+                        .IsUnique();
+
                     b.ToTable("Teachers");
+                });
+
+            modelBuilder.Entity("EducaApi.Domain.Entities.User", b =>
+                {
+                    b.Property<string>("Email")
+                        .HasColumnType("varchar(95)");
+
+                    b.Property<string>("Password")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.HasKey("Email");
+
+                    b.ToTable("Users");
                 });
 
             modelBuilder.Entity("EducaApi.Domain.Entities.Student", b =>
@@ -82,7 +103,24 @@ namespace EducaApi.Infra.Data.Migrations
 
             modelBuilder.Entity("EducaApi.Domain.Entities.Teacher", b =>
                 {
+                    b.HasOne("EducaApi.Domain.Entities.User", "User")
+                        .WithOne("Teacher")
+                        .HasForeignKey("EducaApi.Domain.Entities.Teacher", "Email")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("User");
+                });
+
+            modelBuilder.Entity("EducaApi.Domain.Entities.Teacher", b =>
+                {
                     b.Navigation("Students");
+                });
+
+            modelBuilder.Entity("EducaApi.Domain.Entities.User", b =>
+                {
+                    b.Navigation("Teacher")
+                        .IsRequired();
                 });
 #pragma warning restore 612, 618
         }

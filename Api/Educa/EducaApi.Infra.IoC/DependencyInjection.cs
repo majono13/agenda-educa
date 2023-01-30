@@ -21,6 +21,7 @@ namespace EducaApi.Infra.IoC
 
             services.AddScoped<ITeacherRepository, TeacherRepository>();
             services.AddScoped<IStudentRepository, StudentRepository>();
+            services.AddScoped<IUserRepository, UserRepository>();
             return services;
         }
 
@@ -29,6 +30,7 @@ namespace EducaApi.Infra.IoC
             services.AddAutoMapper(typeof(TeacherProfile));
             services.AddScoped<ITeacherService, TeacherService>();
             services.AddScoped<IStudentService, StudentService>();
+            services.AddScoped<IUserService, UserService>();
             return services;
         }
 
