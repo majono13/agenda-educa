@@ -6,5 +6,6 @@ namespace EducaApi.Application.Services.Interfaces
     {
         Task<ResultService<UserDTO>> CreateUserAsync(UserDTO userDTO);
         Task<ResultService<TeacherDto>> LoginAsync(UserDTO userDTO);
+        Task<ResultService> UpdateUserAsync(UserDTO userDTO);
     }
 }

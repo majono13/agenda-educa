@@ -40,5 +40,27 @@ namespace EducaApi.Api.Controllers
 
             return BadRequest(result);
         }
+
+
+        //Método put para editar usuário
+        [HttpPut]
+        [Route("edit")]
+        public async Task<ActionResult> UpdateUserAsync([FromBody] UserDTO userDto)
+        {
+            try
+            {
+                var result = await _userService.UpdateUserAsync(userDto);
+                if (result.IsSuccess)
+                    return Ok(result);
+
+                return BadRequest(result);
+            }
+            catch (Exception)
+            {
+
+                return StatusCode(500);
+            }
+
+        }
     }
 }

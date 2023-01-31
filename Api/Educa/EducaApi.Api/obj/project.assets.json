@@ -2047,7 +2047,8 @@
         "dependencies": {
           "AutoMapper": "12.0.1",
           "EducaApi.Domain": "1.0.0",
-          "FluentValidation": "11.4.0"
+          "FluentValidation": "11.4.0",
+          "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "6.0.1"
         },
         "compile": {
           "bin/placeholder/EducaApi.Application.dll": {}
@@ -2071,7 +2072,6 @@
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
           "EducaApi.Domain": "1.0.0",
-          "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "6.0.1",
           "Microsoft.EntityFrameworkCore": "6.0.1",
           "Microsoft.EntityFrameworkCore.Proxies": "6.0.1",
           "Pomelo.EntityFrameworkCore.MySql": "6.0.1"
