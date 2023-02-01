@@ -18,6 +18,7 @@ namespace EducaApi.Infra.Data.Repositories
             _db = db;
         }
 
+        #region Create student
         /** Método assíncrono para criar novo aluno **/
         public async Task<Student> CreateStudentAync(Student student)
         {
@@ -25,21 +26,27 @@ namespace EducaApi.Infra.Data.Repositories
             await _db.SaveChangesAsync();
             return student;
         }
+        #endregion
 
+        #region Delete student
         /** Método assíncrono para deletar aluno **/
         public async Task DeleteStudentAsync(Student student)
         {
             _db.Remove(student);
             await _db.SaveChangesAsync();
         }
+        #endregion
 
+        #region Edit student
         /** Método assíncrono para editar aluno **/
         public async Task EditStudentAsync(Student student)
         {
             _db.Update(student);
             await _db.SaveChangesAsync();
         }
+        #endregion
 
+        #region Get students paged
         /** Método assíncrono para buscas alunos no banco de dados de forma paginada **/
         public async Task<PageBaseResponse<Student>> GetPagedAsync(StudentFilterDb request, int teacherId)
         {
@@ -53,13 +60,17 @@ namespace EducaApi.Infra.Data.Repositories
             return await PageBaseResponseHelper.GetResponseAsync<PageBaseResponse<Student>, Student>(students, request);
 
         }
+        #endregion
 
+        #region Get student by id
         /** Método assíncrono para burcar aluno por id **/
         public async Task<Student> GetStudentByIdAsync(int id)
         {
             return await _db.Students.FirstOrDefaultAsync(s => s.Id == id);
         }
+        #endregion
 
+        #region Get students
         /** Método assíncrono para buscar todos os alunos de determinado professor **/
         public async Task<ICollection<Student>> GetStudentsAsync(int teacherId)
         {
@@ -67,5 +78,6 @@ namespace EducaApi.Infra.Data.Repositories
                 .Where(student => student.TeacherId == teacherId)
                 .ToListAsync();
         }
+        #endregion
     }
 }

@@ -2,7 +2,6 @@
 using EducaApi.Application.DTOs;
 using EducaApi.Application.DTOs.Validations;
 using EducaApi.Application.Services.Interfaces;
-using EducaApi.Application.Validations;
 using EducaApi.Domain.Entities;
 using EducaApi.Domain.FiltersDb;
 using EducaApi.Domain.Repositories;
@@ -23,6 +22,7 @@ namespace EducaApi.Application.Services
             _mapper = mapper;
         }
 
+        #region Create student
         /** Método assíncrono para criar novo aluno**/
         public async Task<ResultService<StudentDTO>> CreateStudentAsync(StudentDTO studentDTO)
         {
@@ -43,7 +43,9 @@ namespace EducaApi.Application.Services
 
             return ResultService.Ok<StudentDTO>(_mapper.Map<StudentDTO>(data));
         }
+        #endregion
 
+        #region Delete student
         /** Método assíncrono para deletar aluno salvo no banco de dados **/
         public async Task<ResultService> DeleteStudentAsync(int id)
         {
@@ -56,7 +58,9 @@ namespace EducaApi.Application.Services
 
             return ResultService.Ok($"Aluno/a: {student.Name} deletado com sucesso!");
         }
+        #endregion
 
+        #region Get students paged
         /** Método assíncrono buscar alunos no banco de dados de forma paginada **/
         public async Task<ResultService<PageBaseResponseDTO<StudentDTO>>> GetPagedAsync(StudentFilterDb studentFilterDb,int teacherId)
         {
@@ -68,7 +72,9 @@ namespace EducaApi.Application.Services
 
             return ResultService.Ok(result);
         }
+        #endregion
 
+        #region Get student by id
         /** Método assíncrono para buscar aluno por id **/
         public async Task<ResultService<StudentDTO>> GetStudentByIdAsync(int id)
         {
@@ -79,7 +85,9 @@ namespace EducaApi.Application.Services
 
             return ResultService.Ok<StudentDTO>(_mapper.Map<StudentDTO>(student));
         }
+        #endregion
 
+        #region Get all students
         /** Método assíncrono para buscar alunos de determinado professor **/
         public async Task<ResultService<ICollection<StudentDTO>>> GetStudentsAsync(int teacherId)
         {
@@ -91,7 +99,9 @@ namespace EducaApi.Application.Services
 
             return ResultService.Ok(_mapper.Map<ICollection<StudentDTO>>(students));
         }
+        #endregion
 
+        #region Edit student
         /** Método assíncrono para editar aluno salvo no banco de dados **/
         public async Task<ResultService> UpdateStudentAsync(StudentDTO studentDTO)
         {
@@ -116,5 +126,6 @@ namespace EducaApi.Application.Services
             await _studentRespository.EditStudentAsync(student);
             return ResultService.Ok("Aluno editado com sucesso!");
         }
+        #endregion
     }
 }

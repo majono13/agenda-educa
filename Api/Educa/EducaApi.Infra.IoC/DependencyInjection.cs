@@ -7,6 +7,8 @@ using Microsoft.Extensions.DependencyInjection;
 using EducaApi.Application.Profiles;
 using EducaApi.Application.Services.Interfaces;
 using EducaApi.Application.Services;
+using EducaApi.Domain.Authentication;
+using EducaApi.Infra.Data.Authentication;
 
 namespace EducaApi.Infra.IoC
 {
@@ -31,6 +33,7 @@ namespace EducaApi.Infra.IoC
             services.AddScoped<ITeacherService, TeacherService>();
             services.AddScoped<IStudentService, StudentService>();
             services.AddScoped<IUserService, UserService>();
+            services.AddScoped<ITokenGenerator, TokenGenerator>();
             return services;
         }
 

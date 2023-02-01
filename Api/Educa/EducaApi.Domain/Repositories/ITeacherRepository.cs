@@ -7,6 +7,5 @@ namespace EducaApi.Domain.Repositories
         Task<Teacher> GetTeacherByIdAsync(int id);
         Task<Teacher> CreateTeacherAync(Teacher teacher);
         Task EditTeacherAsync(Teacher teacher);
-        Task DeleteTeacherAsync(Teacher teacher);
     }
 }

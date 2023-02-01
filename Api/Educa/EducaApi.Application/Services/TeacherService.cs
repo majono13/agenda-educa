@@ -21,7 +21,9 @@ namespace EducaApi.Application.Services
             _mapper = mapper;
         }
 
-       /** Método assíncrono para criar novo professor **/
+        #region Create Teacher
+
+        /** Método assíncrono para criar novo professor **/
         public async Task<ResultService<TeacherDto>> CreateTeacherAsync(TeacherDto teacherDto)
         {
             //Validação do parâmetro
@@ -39,20 +41,10 @@ namespace EducaApi.Application.Services
             var data = await _teacherRepository.CreateTeacherAync(teacher);
             return ResultService.Ok<TeacherDto>(_mapper.Map<TeacherDto>(data));
         }
+        #endregion
 
-        /** Método assíncrono para deletar professor salvo no banco de dados **/
-        public async Task<ResultService> DeleteTeacherAsync(int id)
-        {
-            var teacher = await _teacherRepository.GetTeacherByIdAsync(id);
 
-            if (teacher == null)
-                return ResultService.Fail("Não foram encontrados dados correspondentes a requisição");
-
-            await _teacherRepository.DeleteTeacherAsync(teacher);
-
-            return ResultService.Ok("Dado removido do banco de dados");
-        }
-
+        #region Get teacher by email
         /** Método assíncrono para buscar professor por id **/
         public async Task<ResultService<TeacherDto>> GetTeacherByIdAsync(int id)
         {
@@ -61,7 +53,9 @@ namespace EducaApi.Application.Services
                 return ResultService.Fail<TeacherDto>("Não foram encontrados dados correspondentes a requisição");
             return ResultService.Ok(_mapper.Map<TeacherDto>(result));
         }
+        #endregion
 
+        #region Edit teacher
         /** Método assíncrono para editar professor **/
         public async Task<ResultService> UpdateTeacherAsync(TeacherDto teacherDto)
         {
@@ -86,5 +80,6 @@ namespace EducaApi.Application.Services
             await _teacherRepository.EditTeacherAsync(teacher);
             return ResultService.Ok("Editado com sucesso!");
         }
+        #endregion
     }
 }

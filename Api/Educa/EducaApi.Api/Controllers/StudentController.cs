@@ -1,10 +1,12 @@
 ﻿using EducaApi.Application.DTOs;
 using EducaApi.Application.Services.Interfaces;
 using EducaApi.Domain.FiltersDb;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace EducaApi.Api.Controllers
 {
+    [Authorize]
     [Route("api/student")]
     [ApiController]
     public class StudentController : ControllerBase

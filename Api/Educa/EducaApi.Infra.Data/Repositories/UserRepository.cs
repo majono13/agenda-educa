@@ -15,6 +15,7 @@ namespace EducaApi.Infra.Data.Repositories
             _db = db;
         }
 
+        #region Create user
         /** Método assíncrono para criar novo usuário **/
         public async Task<User> CreateUserAsync(User user)
         {
@@ -23,18 +24,23 @@ namespace EducaApi.Infra.Data.Repositories
             _db.SaveChanges();
             return user;
         }
+        #endregion
 
+        #region Get user by email
         /** Método assíncrono para buscar usuário pelo e-mail **/
         public async Task<User> GetUserByEmailAsync(string email)
         {
             return await _db.Users.FirstOrDefaultAsync(x => x.Email == email);
         }
+        #endregion
 
+        #region Edit password
         /** Método assíncrono para editar professor **/
         public async Task UpdateUserAsync(User user)
         {
             _db.Update(user);
             await _db.SaveChangesAsync();
         }
+        #endregion
     }
 }

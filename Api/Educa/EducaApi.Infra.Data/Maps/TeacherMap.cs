@@ -9,6 +9,8 @@ namespace EducaApi.Infra.Data.Maps
 
         public void Configure(EntityTypeBuilder<Teacher> builder)
         {
+            builder.HasAlternateKey(x => x.Email);
+
             builder.HasMany(t => t.Students)
                 .WithOne(s => s.Teacher)
                 .HasForeignKey(s => s.TeacherId);

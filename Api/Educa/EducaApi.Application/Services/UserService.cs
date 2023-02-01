@@ -2,6 +2,7 @@
 using EducaApi.Application.DTOs;
 using EducaApi.Application.DTOs.Validations;
 using EducaApi.Application.Services.Interfaces;
+using EducaApi.Domain.Authentication;
 using EducaApi.Domain.Entities;
 using EducaApi.Domain.Repositories;
 using Microsoft.AspNetCore.Identity;
@@ -12,13 +13,18 @@ namespace EducaApi.Application.Services
     {
         private readonly IUserRepository _userRepository;
         private readonly IMapper _mapper;
+        private readonly ITokenGenerator _tokenGenerator;
 
-        public UserService(IUserRepository userRepository, IMapper mapper)
+        public UserService(IUserRepository userRepository,
+            IMapper mapper,
+            ITokenGenerator tokenGenerator)
         {
             _userRepository = userRepository;
             _mapper = mapper;
+            _tokenGenerator = tokenGenerator;
         }
 
+        #region Create user
         /** Método assíncrono para criar novo usuário **/
         public async Task<ResultService<UserDTO>> CreateUserAsync(UserDTO userDTO)
         {
@@ -31,39 +37,48 @@ namespace EducaApi.Application.Services
                 return ResultService.RequestError<UserDTO>("Erro ao validar objeto", result);
 
             //Realiza hash na senha
+            HashPassword(userDTO);
             var user = _mapper.Map<User>(userDTO);
-            HashPassword(user);
+
 
             //Criação do dado no bd e retorno do serviço
             var data = await _userRepository.CreateUserAsync(user);
 
             return ResultService.Ok<UserDTO>(_mapper.Map<UserDTO>(data));
         }
+        #endregion
 
+        #region Login
         /** Método assíncrono para logar usuário **/
-        public async Task<ResultService<TeacherDto>> LoginAsync(UserDTO userDTO)
+        public async Task<ResultService<UserDTO>> LoginAsync(UserDTO userDTO)
         {
             if (userDTO == null)
-                return ResultService.Fail<TeacherDto>("Objeto deve ser informado!");
+                return ResultService.Fail<UserDTO>("Objeto deve ser informado!");
 
             //Verifica se existe usuário com email enviado
             var userDb = await _userRepository.GetUserByEmailAsync(userDTO.Email);
 
             if (userDb == null)
-                return ResultService.Fail<TeacherDto>("Usuário não encontrado");
+                return ResultService.Fail<UserDTO>("Usuário não encontrado");
 
             //var user = _mapper.Map<User>(userDTO);
 
             //Faz hash para validar a senha enviada
-            //Se a senha bater, devolve a entidade teacher
             if (await VerifyPassword(userDTO, userDb))
-                return ResultService.Ok(_mapper.Map<TeacherDto>(userDb.Teacher));
+            {
+                var res = _mapper.Map<UserDTO>(userDb);
+                res.Token = _tokenGenerator.Generator(userDb);
 
-            return ResultService.Fail<TeacherDto>("E-mail ou senha inválidos");
+                return ResultService.Ok(res);
+            }
+
+            return ResultService.Fail<UserDTO>("E-mail ou senha inválidos");
 
         }
+        #endregion
 
-        /** Método assíncrono para login **/
+        #region Update password
+        /** Método assíncrono para atualizar senha **/
         public async Task<ResultService> UpdateUserAsync(UserDTO userDTO)
         {
             #region validações
@@ -89,17 +104,34 @@ namespace EducaApi.Application.Services
 
 
             //Realiza hash na nova senha e salva no banco de dados
-            user.Password = userDTO.Password;
-            HashPassword(user);
+            HashPassword(userDTO);
+            //mapeamento para edição de dados
+            var map = _mapper.Map<UserDTO, User>(userDTO, user);
 
-            await _userRepository.UpdateUserAsync(_mapper.Map<User>(user));
+
+            await _userRepository.UpdateUserAsync(_mapper.Map<User>(map));
             return ResultService.Ok("Usuário Editado com sucesso!");
         }
+        #endregion
 
-        //Método privado para realizar hash da senha enviada pelo front
-        private static void HashPassword(User user)
+        #region Get user by email
+        /** Método Assíncrono para buscar usuário por e-mail **/
+        public async Task<ResultService<UserDTO>> GetUserByEmailAsync(string email)
         {
-            var passwordHash = new PasswordHasher<User>();
+            var result = await _userRepository.GetUserByEmailAsync(email);
+
+            if (result == null)
+                return ResultService.Fail<UserDTO>("Usuário não encontrado");
+
+            return ResultService.Ok<UserDTO>(_mapper.Map<UserDTO>(result));
+        }
+        #endregion
+
+        #region Private methods
+        //Método privado para realizar hash da senha enviada pelo front
+        private static void HashPassword(UserDTO user)
+        {
+            var passwordHash = new PasswordHasher<UserDTO>();
             user.Password = passwordHash.HashPassword(user, user.Password);
         }
 
@@ -119,6 +151,6 @@ namespace EducaApi.Application.Services
                     throw new InvalidOperationException();
             }
         }
-
+        #endregion
     }
 }

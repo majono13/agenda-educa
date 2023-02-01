@@ -12,6 +12,5 @@ namespace EducaApi.Application.Services.Interfaces
         Task<ResultService<TeacherDto>> CreateTeacherAsync(TeacherDto teacherDto);
         Task<ResultService<TeacherDto>> GetTeacherByIdAsync(int id);
         Task<ResultService> UpdateTeacherAsync(TeacherDto teacherDto);
-        Task<ResultService> DeleteTeacherAsync(int id);
     }
 }

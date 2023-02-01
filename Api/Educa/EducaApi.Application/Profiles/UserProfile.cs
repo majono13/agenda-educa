@@ -11,6 +11,8 @@ namespace EducaApi.Application.Profiles
             CreateMap<User, UserDTO>()
                 .ForMember(x => x.Password, opt => opt.Ignore());
             CreateMap<UserDTO, User>();
+
+            CreateMap<UserDTO, User>();
         }
     }
 }
