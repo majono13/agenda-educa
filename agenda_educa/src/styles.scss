@@ -1,0 +1,9 @@
+@use "./styles/theme/custom-theme.scss";
+@use "./styles/variables.scss" as *;
+@use "./styles/bootstrap/bootstrap-grid.min.css";
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: $font;
+}

@@ -1,0 +1,11 @@
+@use "../../../../styles/index.scss" as *;
+
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  h1 {
+    @include text-Logo;
+    color: $primary-800;
+  }
+}

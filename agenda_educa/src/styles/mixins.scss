@@ -1,0 +1,84 @@
+@use "./variables.scss" as *;
+
+//Texto
+@mixin text-Logo {
+  font-size: 1.5em;
+  font-weight: 500;
+
+  @include screenMediumLarge() {
+    font-size: 2em;
+  }
+}
+
+@mixin paragraphSmall {
+  font-size: 1rem;
+  line-height: 1rem;
+  font-weight: 200;
+}
+
+@mixin paragraphMedium {
+  font-size: 1.5rem;
+  line-height: 1.5rem;
+  font-weight: 300;
+}
+
+@mixin paragraphLarge {
+  font-size: 2rem;
+  line-height: 2rem;
+  font-weight: 400;
+}
+
+@mixin link {
+  color: $primary-800;
+  font-weight: 400;
+  font-size: 1rem;
+  &:hover {
+    color: $primary-600;
+  }
+}
+
+//Espaçamento
+@mixin marginContainer {
+  margin: 1rem;
+}
+
+//Medias
+@mixin screenSmall {
+  @media only screen and (min-width: 540px) {
+    @content;
+  }
+}
+
+@mixin screenMedium {
+  @media only screen and (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin screenMediumLarge {
+  @media only screen and (min-width: 960px) {
+    @content;
+  }
+}
+
+@mixin screenLarge {
+  @media only screen and (min-width: 1024px) {
+    @content;
+  }
+}
+
+@mixin screenExtraLarge {
+  @media only screen and (min-width: 1500px) {
+    @content;
+  }
+}
+
+//Botões
+@mixin button {
+  font-size: 1rem;
+
+  transition: 0.5s;
+  &:hover {
+    opacity: 0.8;
+  }
+}
