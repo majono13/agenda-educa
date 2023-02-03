@@ -37,6 +37,14 @@
   }
 }
 
+@mixin title-big {
+  font-size: 1.5rem;
+  font-weight: 400;
+  @include screenMedium {
+    font-size: 2rem;
+  }
+}
+
 //Espaçamento
 @mixin marginContainer {
   margin: 1rem;
@@ -80,5 +88,51 @@
   transition: 0.5s;
   &:hover {
     opacity: 0.8;
+  }
+}
+
+//Animações
+@mixin animation-rigth-to-left {
+  animation: animation-entrance 0.8s linear;
+
+  @keyframes animation-entrance {
+    0% {
+      transform: translateX(100px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+}
+
+@mixin animation-bottom-to-top {
+  animation: animation-entrance 1.5s linear;
+
+  @keyframes animation-entrance {
+    0% {
+      transform: translateY(100px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+}
+
+@mixin animation-top-to-bottom {
+  animation: animation-entrance 1.5s linear;
+
+  @keyframes animation-entrance {
+    0% {
+      transform: translateY(-100px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
   }
 }

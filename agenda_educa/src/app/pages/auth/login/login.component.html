@@ -1,18 +1,19 @@
 
 <main class="row">
 
-  <div class="section-img col-lg-7 col-md-12">
-    <div id="text">
-      <span id="bold">O educador se eterniza </span>
-      <span id="italic">em cada ser que ele educa</span>
-    </div>
-
-    <div class="img">
-      <img src="../../../../assets/images/img-login.svg" alt="Imagem de pessoas segurando livros">
+  <div class="section-img col-lg-8 col-md-12">
+    <div class="animation">
+      <div id="text">
+        <span id="bold">O educador se eterniza </span>
+        <span id="italic">em cada ser que ele educa</span>
+      </div>
+      <div class="img">
+        <img src="../../../../assets/images/img-login.svg" alt="Imagem de pessoas segurando livros">
+      </div>
     </div>
   </div>
 
-  <div class="form col-lg-5 col-md-12">
+  <div class="form col-lg-4 col-md-12">
 
     <app-logo></app-logo>
     <form [formGroup]="loginForm">
@@ -53,7 +54,7 @@
 
     <section>
       <h3>Não tem cadastro?
-        <a href="#">Cadastre-se</a>
+        <a routerLink="/login/cadastro">Cadastre-se</a>
       </h3>
     </section>
   </div>
