@@ -127,6 +127,24 @@ namespace EducaApi.Application.Services
         }
         #endregion
 
+        #region Get user email by token
+
+        /** Método assíncrono para recuperar usuário através do token **/
+        public async Task<ResultService<string>> GetUserEmailByToken(string token)
+        {
+            if (token == null)
+                return ResultService.Fail<string>("O token deve ser informado!");
+
+            var result = await _userRepository.GetUserEmailByToken(token);
+
+            if (result == null)
+                return ResultService.Fail<string>("Usuário não encontrado");
+
+            return ResultService.Ok<string>(result);
+        }
+
+        #endregion
+
         #region Private methods
         //Método privado para realizar hash da senha enviada pelo front
         private static void HashPassword(UserDTO user)

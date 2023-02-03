@@ -7,6 +7,7 @@ namespace EducaApi.Domain.Repositories
         Task<User> GetUserByEmailAsync(string email);
         Task<User> CreateUserAsync(User user);
         Task UpdateUserAsync(User user);
+        Task<string> GetUserEmailByToken(string token);
 
     }
 }
