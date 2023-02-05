@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 
 //Módulos
 import { MaterialModule } from './material.module';
+import { HttpClientModule } from '@angular/common/http';
 
 //Componentes
 import { LogoComponent } from '../components/logo/logo.component';
@@ -11,11 +12,12 @@ import { SpinnerComponent } from '../components/spinner/spinner.component';
 
 //Serviços
 import { SnackbarService } from 'src/app/services/shared/snackbar.service';
+import { TeacherService } from 'src/app/services/shared/teacher.service';
 
 @NgModule({
   declarations: [LogoComponent, FooterComponent, SpinnerComponent],
-  imports: [CommonModule, MaterialModule],
+  imports: [CommonModule, MaterialModule, HttpClientModule],
   exports: [MaterialModule, LogoComponent, FooterComponent, SpinnerComponent],
-  providers: [SnackbarService],
+  providers: [SnackbarService, TeacherService],
 })
 export class SharedModule {}

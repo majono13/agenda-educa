@@ -45,7 +45,7 @@ namespace EducaApi.Application.Validations
 
             RuleFor(X => X.Phone)
              .MinimumLength(11)
-             .MaximumLength(11)
+             .MaximumLength(17)
              .WithMessage("Número de telefone inválido");
             #endregion
 

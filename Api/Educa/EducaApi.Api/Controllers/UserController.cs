@@ -21,7 +21,7 @@ namespace EducaApi.Api.Controllers
         [HttpPost]
         public async Task<ActionResult> CreateUserAsync([FromBody] UserDTO userDto)
         {
-            var result = await _userService.CreateUserAsync(userDto);
+            ResultService<UserDTO> result = await _userService.CreateUserAsync(userDto);
 
             if (result.IsSuccess)
                 return Ok(result);

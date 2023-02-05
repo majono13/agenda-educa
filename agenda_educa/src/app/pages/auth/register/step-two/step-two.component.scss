@@ -1,0 +1,15 @@
+@use "../../../../../styles/index.scss" as *;
+form {
+  //mixins
+  @include animation-rigth-to-left;
+
+  //Input
+  mat-form-field {
+    display: block !important;
+    width: 100%;
+
+    @include screenLarge {
+      max-width: 40rem;
+    }
+  }
+}

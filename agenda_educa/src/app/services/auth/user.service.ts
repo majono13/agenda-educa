@@ -28,6 +28,11 @@ export class UserService {
 
   constructor(private _http: HttpClient, private _tokenService: TokenService) {}
 
+  /** Método para criar novo usuário **/
+  createNewUser(user: User): Observable<Response<User>> {
+    return this._http.post<Response<User>>(`${this.url}`, user).pipe(take(1));
+  }
+
   /** Método para fazer login **/
   login(user: User): Observable<Response<LoginResponse>> {
     return this._http

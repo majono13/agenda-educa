@@ -17,6 +17,10 @@
   /** Configurações da sessão de formulário **/
   .form {
     max-width: 100%;
+    min-height: 25rem;
+    margin: 1rem;
+    background-color: rgba(255, 255, 255, 0.74);
+    border-radius: 1rem;
     padding: 1rem;
 
     //mixins
@@ -26,42 +30,29 @@
     @include screenExtraLarge {
       max-width: 1200px;
     }
-    form {
-      background-color: rgba(255, 255, 255, 0.534);
-      border-radius: 1rem;
-      padding: 1rem;
-      //mixins
-      @include animation-rigth-to-left;
-      @include screenMedium {
-        padding: 3rem;
+    @include screenMedium {
+      padding: 3rem;
+    }
+
+    h1 {
+      @include title-big;
+      text-align: center;
+      color: $primary-800;
+    }
+
+    //Botão
+    .button {
+      width: 100%;
+      text-align: right;
+      margin-top: 2rem;
+      #back-button {
+        border: 2px solid $primary-800;
       }
 
-      h1 {
-        @include title-big;
-        text-align: center;
-        color: $primary-800;
-      }
-
-      //Botão
-      .button {
-        width: 100%;
-        text-align: right;
-        margin-top: 2rem;
-        #back-button {
-          border: 2px solid $primary-800;
-        }
-
-        button {
-          margin: 0.5rem;
-        }
-      }
-      //Input
-      mat-form-field {
-        display: block;
-        width: 100%;
-
-        @include screenLarge {
-          max-width: 40rem;
+      button {
+        margin: 0.5rem;
+        app-spinner {
+          margin-left: 0.5rem;
         }
       }
     }

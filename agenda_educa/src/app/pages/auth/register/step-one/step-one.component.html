@@ -1,0 +1,31 @@
+<form [formGroup]="step1Form">
+  <!-- Email -->
+  <mat-form-field appearance="outline">
+    <mat-label>E-mail</mat-label>
+    <input type="email" e matInput placeholder="Digite seu e-mail" formControlName="email" />
+    <mat-error *ngIf="step1Form.controls['email']?.errors?.['required']">Campo obrigatório*</mat-error>
+    <mat-error *ngIf="step1Form.controls['email']?.errors?.['email']">E-mail inválido</mat-error>
+  </mat-form-field>
+  <!---->
+
+      <!-- Senha -->
+  <mat-form-field appearance="outline">
+    <mat-label>Senha</mat-label>
+    <input type="password" e matInput placeholder="Crie uma senha" formControlName="password" />
+    <mat-error *ngIf="step1Form.controls['password']?.errors?.['required']">Campo obrigatório*</mat-error>
+    <mat-error *ngIf="step1Form.controls['password']?.errors?.['minlength']">A senha deve ter no mínimo 6 caracteres</mat-error>
+    <mat-error *ngIf="step1Form.controls['password']?.errors?.['maxlength']">A senha deve ter no máximo 20 caracteres</mat-error>
+  </mat-form-field>
+  <!---->
+
+  <!-- Confirmação da senha -->
+  <mat-form-field appearance="outline">
+    <mat-label>Senha</mat-label>
+    <input type="password" e matInput placeholder="Confirme sua senha" formControlName="rePassword" />
+    <mat-error *ngIf="step1Form.controls['rePassword']?.errors?.['required']">Campo obrigatório*</mat-error>
+    <mat-error *ngIf="step1Form.controls['rePassword']?.errors?.['minlength']">A senha deve ter no mínimo 6 caracteres</mat-error>
+    <mat-error *ngIf="step1Form.controls['rePassword']?.errors?.['maxlength']">A senha deve ter no máximo 20 caracteres</mat-error>
+    <mat-error *ngIf="step1Form.controls['rePassword']?.errors?.['matchingPassword']">As senhas não coincidem</mat-error>
+  </mat-form-field>
+   <!---->
+</form>
