@@ -8,5 +8,6 @@ namespace EducaApi.Application.Services.Interfaces
         Task<ResultService<UserDTO>> LoginAsync(UserDTO userDTO);
         Task<ResultService> UpdateUserAsync(UserDTO userDTO);
         Task<ResultService<UserDTO>> GetUserByEmailAsync(string email);
+        Task<ResultService<string>> GetUserEmailByToken(string token);
     }
 }

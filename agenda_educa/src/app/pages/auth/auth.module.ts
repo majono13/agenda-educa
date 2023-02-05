@@ -5,14 +5,29 @@ import { CommonModule } from '@angular/common';
 import { AuthRoutingModule } from './auth-routing.module';
 import { SharedModule } from 'src/app/shared/modules/shared.module';
 import { ReactiveFormsModule } from '@angular/forms';
+import { NgxMaskModule } from 'ngx-mask';
 
 //Componentes
 import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
 import { ResetPasswordComponent } from './reset-password/reset-password.component';
+import { StepOneComponent } from './register/step-one/step-one.component';
+import { StepTwoComponent } from './register/step-two/step-two.component';
 
 @NgModule({
-  declarations: [RegisterComponent, LoginComponent, ResetPasswordComponent],
-  imports: [CommonModule, AuthRoutingModule, SharedModule, ReactiveFormsModule],
+  declarations: [
+    RegisterComponent,
+    LoginComponent,
+    ResetPasswordComponent,
+    StepOneComponent,
+    StepTwoComponent,
+  ],
+  imports: [
+    CommonModule,
+    AuthRoutingModule,
+    SharedModule,
+    ReactiveFormsModule,
+    NgxMaskModule,
+  ],
 })
 export class AuthModule {}

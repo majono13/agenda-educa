@@ -1,0 +1,35 @@
+<form [formGroup]="step2Form">
+  <mat-form-field appearance="outline">
+    <!-- Nome -->
+    <mat-label>Nome</mat-label>
+    <input type="text" e matInput placeholder="Digite seu nome" formControlName="firstname" />
+    <mat-error *ngIf="step2Form.controls['firstname']?.errors?.['required']">Campo obrigatório*</mat-error>
+    <mat-error *ngIf="step2Form.controls['firstname']?.errors?.['minlength']">Nome deve ter no mínimo 3 caracteres</mat-error>
+    <mat-error *ngIf="step2Form.controls['firstname']?.errors?.['maxlength']">Nome deve ter no máximo 20 caracteres</mat-error>
+  </mat-form-field>
+  <!---->
+
+  <!-- Sobrenome -->
+  <mat-form-field appearance="outline">
+    <mat-label>Sobrenome</mat-label>
+    <input type="text" e matInput placeholder="Digite seu sobrenome" formControlName="lastname" />
+    <mat-error *ngIf="step2Form.controls['lastname']?.errors?.['required']">Campo obrigatório*</mat-error>
+    <mat-error *ngIf="step2Form.controls['lastname']?.errors?.['minlength']">Sobrenome deve ter no mínimo 2 caracteres</mat-error>
+    <mat-error *ngIf="step2Form.controls['lastname']?.errors?.['maxlength']">Sobrenome deve ter no máximo 50 caracteres</mat-error>
+  </mat-form-field>
+   <!---->
+
+  <!-- Telefone -->
+  <mat-form-field appearance="outline">
+    <mat-label>Telefone</mat-label>
+    <input type="text" e matInput placeholder="Digite o número do seu telefone" formControlName="phone"
+    mask="(00) 00000-0000" />
+    <mat-error *ngIf="step2Form.controls['phone']?.errors?.['required']">Campo obrigatório*</mat-error>
+    <mat-error
+      *ngIf="step2Form.controls['phone']?.errors?.['minlength']
+      || step2Form.controls['phone']?.errors?.['maxlength']">
+      Número de telefone inválido
+    </mat-error>
+  </mat-form-field>
+   <!---->
+</form>

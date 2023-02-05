@@ -1,1 +1,61 @@
 
+<main class="row">
+
+  <div class="section-img col-lg-8 col-md-12">
+    <div class="animation">
+      <div id="text">
+        <span id="bold">O educador se eterniza </span>
+        <span id="italic">em cada ser que ele educa</span>
+      </div>
+      <div class="img">
+        <img src="../../../../assets/images/img-login.svg" alt="Imagem de pessoas segurando livros">
+      </div>
+    </div>
+  </div>
+
+  <div class="form col-lg-4 col-md-12">
+
+    <app-logo></app-logo>
+    <form [formGroup]="loginForm">
+
+      <!-- Input e-mail -->
+      <mat-form-field appearance="outline">
+        <mat-label>E-mail</mat-label>
+        <input type="email"e matInput placeholder="Digite seu e-mail" formControlName="email">
+        <mat-icon matSuffix>alternate_email</mat-icon>
+        <mat-error *ngIf="loginForm.controls['email']?.errors?.['email']">E-mail inválido</mat-error>
+        <mat-error *ngIf="loginForm.controls['email']?.errors?.['required']">Campo obrigatório*</mat-error>
+      </mat-form-field>
+      <!---->
+
+      <!-- Input senha -->
+      <mat-form-field appearance="outline">
+        <mat-label>Senha</mat-label>
+        <input type="password"e matInput placeholder="Digite sua senha" formControlName="password">
+        <mat-icon matSuffix>lock_open</mat-icon>
+        <mat-error *ngIf="loginForm.controls['password']?.errors?.['required']">Campo obrigatório*</mat-error>
+        <mat-error *ngIf="loginForm.controls['password']?.errors?.['minlength']">A senha deve ter no mínimo 6 caracteres</mat-error>
+        <mat-error *ngIf="loginForm.controls['password']?.errors?.['maxlength']">A senha deve ter no máximo 20 caracteres</mat-error>
+      </mat-form-field>
+      <!---->
+      <a href="#">Esqueci minha senha</a>
+
+      <button *ngIf="!loading; else buttonLoading"
+      mat-raised-button color="primary"
+      [disabled]="loginForm.invalid"
+      (click)="login()">Confirmar</button>
+
+      <ng-template #buttonLoading>
+        <button class="button-loading" mat-raised-button color="primary">Aguarde...
+          <app-spinner></app-spinner>
+        </button>
+      </ng-template>
+    </form>
+
+    <section>
+      <h3>Não tem cadastro?
+        <a routerLink="/login/cadastro">Cadastre-se</a>
+      </h3>
+    </section>
+  </div>
+</main>

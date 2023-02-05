@@ -4,8 +4,28 @@
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.text-logo {
   h1 {
     @include text-Logo;
     color: $primary-800;
+  }
+}
+
+.logo-white {
+  h1 {
+    @include text-Logo;
+    color: white;
+  }
+}
+
+.footer {
+  img {
+    width: 3rem;
+  }
+  h1 {
+    @include text-Logo;
+    font-size: 1rem !important;
   }
 }

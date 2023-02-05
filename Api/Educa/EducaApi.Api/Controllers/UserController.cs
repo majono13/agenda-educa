@@ -21,7 +21,7 @@ namespace EducaApi.Api.Controllers
         [HttpPost]
         public async Task<ActionResult> CreateUserAsync([FromBody] UserDTO userDto)
         {
-            var result = await _userService.CreateUserAsync(userDto);
+            ResultService<UserDTO> result = await _userService.CreateUserAsync(userDto);
 
             if (result.IsSuccess)
                 return Ok(result);
@@ -75,6 +75,19 @@ namespace EducaApi.Api.Controllers
                 return StatusCode(500);
             }
 
+        }
+
+        //Método get para bsucar email do usuário pelo token
+        [HttpGet]
+        [Route("token/{email}")]
+        public async Task<IActionResult> GetUserEmailByToken(string email)
+        {
+            var result = await _userService.GetUserEmailByToken(email);
+
+            if (result.IsSuccess)
+                return Ok(result);
+
+            return BadRequest(result);
         }
     }
 }
