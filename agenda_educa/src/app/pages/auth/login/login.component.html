@@ -38,7 +38,7 @@
         <mat-error *ngIf="loginForm.controls['password']?.errors?.['maxlength']">A senha deve ter no máximo 20 caracteres</mat-error>
       </mat-form-field>
       <!---->
-      <a href="#">Esqueci minha senha</a>
+      <a routerLink="/login/redefinir-senha">Esqueci minha senha</a>
 
       <button *ngIf="!loading; else buttonLoading"
       mat-raised-button color="primary"

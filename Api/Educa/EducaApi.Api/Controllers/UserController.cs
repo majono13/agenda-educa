@@ -49,16 +49,12 @@ namespace EducaApi.Api.Controllers
         {
             var result = await _userService.GetUserByEmailAsync(email);
 
-            if (result.IsSuccess)
-                return Ok(result);
-
-            return BadRequest(result);
+            return Ok(result);
         }
 
         //Método put para editar usuário
         [HttpPut]
         [Route("edit")]
-        [Authorize]
         public async Task<ActionResult> UpdateUserAsync([FromBody] UserDTO userDto)
         {
             try
