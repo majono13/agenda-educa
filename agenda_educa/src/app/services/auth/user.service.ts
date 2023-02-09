@@ -4,6 +4,9 @@ import {
   BehaviorSubject,
   Observable,
   catchError,
+  debounceTime,
+  delay,
+  distinctUntilChanged,
   map,
   of,
   take,
@@ -27,6 +30,23 @@ export class UserService {
     new BehaviorSubject<boolean>(false);
 
   constructor(private _http: HttpClient, private _tokenService: TokenService) {}
+
+  /** Método para buscar usuário por email **/
+  verifyIfEmailExists(email: string): Observable<Boolean> {
+    return this._http.get<Response<User>>(`${this.url}/${email}`).pipe(
+      map((res) => {
+        if (res?.data?.email) return true;
+        else return false;
+      })
+    );
+  }
+
+  /** Método para editar senha **/
+  editPassword(user: User): Observable<Response<User>> {
+    return this._http
+      .put<Response<User>>(`${this.url}/edit`, user)
+      .pipe(take(1));
+  }
 
   /** Método para criar novo usuário **/
   createNewUser(user: User): Observable<Response<User>> {

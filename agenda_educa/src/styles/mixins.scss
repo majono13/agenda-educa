@@ -91,17 +91,36 @@
   }
 }
 
+@mixin button-white {
+  border: 2px solid $primary-800;
+}
+
+//Formulários
+@mixin mat-form {
+  mat-form-field {
+    display: block !important;
+    width: 100%;
+
+    @include screenLarge {
+      max-width: 40rem;
+    }
+  }
+}
+
 //Animações
 @mixin animation-rigth-to-left {
   animation: animation-entrance 0.8s linear;
+  -webkit-animation: animation-entrance 0.8s linear;
 
   @keyframes animation-entrance {
     0% {
       transform: translateX(100px);
+      -webkit-transform: translateX(100px);
       opacity: 0;
     }
     100% {
       transform: translateX(0);
+      -webkit-transform: translateX(0);
       opacity: 1;
     }
   }
@@ -109,14 +128,17 @@
 
 @mixin animation-bottom-to-top {
   animation: animation-entrance 1.5s linear;
+  -webkit-animation: animation-entrance 1.5s linear;
 
   @keyframes animation-entrance {
     0% {
       transform: translateY(100px);
+      -webkit-transform: translateY(100px);
       opacity: 0;
     }
     100% {
       transform: translateY(0);
+      -webkit-transform: translateY(0);
       opacity: 1;
     }
   }
@@ -124,14 +146,17 @@
 
 @mixin animation-top-to-bottom {
   animation: animation-entrance 1.5s linear;
+  -webkit-animation: animation-entrance 1.5s linear;
 
   @keyframes animation-entrance {
     0% {
       transform: translateY(-100px);
+      -webkit-transform: translateY(-100px);
       opacity: 0;
     }
     100% {
       transform: translateY(0);
+      -webkit-transform: translateY(0);
       opacity: 1;
     }
   }
