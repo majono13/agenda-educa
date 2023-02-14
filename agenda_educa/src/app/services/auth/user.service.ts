@@ -83,11 +83,11 @@ export class UserService {
   checkTokenValidation(token: string): Observable<boolean> {
     return this._http.get<any>(`${this.url}/token/${token}`).pipe(
       tap((res) => this.updateSubjectsLoggedInAndEmail(res?.data)),
-      map((res) => (res ? true : false)),
-      catchError((err) => {
+      map((res) => (res ? true : false))
+      /*catchError((err) => {
         this.logout();
         return of(false);
-      })
+      })*/
     );
   }
 

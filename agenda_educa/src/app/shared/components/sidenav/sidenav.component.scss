@@ -1,0 +1,63 @@
+@use "../../../../styles/index.scss" as *;
+
+.desktop {
+  position: absolute;
+  width: 16rem;
+  height: calc(100% - 4rem);
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.281);
+  border-right: 1px solid $primary-300;
+
+  .mat-expansion-panel:not([class*="mat-elevation-z"]) {
+    box-shadow: none !important;
+  }
+
+  .mat-expansion-panel {
+    background-color: $gray !important;
+    color: $primary-500;
+  }
+
+  .mat-expansion-panel-header-title {
+    color: $primary-800;
+    font-size: 1.1rem;
+  }
+}
+
+p {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  &:hover {
+    opacity: 0.8;
+  }
+}
+
+.mobile {
+  overflow-y: hidden;
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.281);
+  background-image: linear-gradient(
+    to right,
+    $primary-800,
+    $primary-600,
+    $primary-500,
+    $primary-400,
+    $primary-300
+  );
+  border-top: 1px solid $primary-300;
+  color: white;
+
+  section {
+    margin: auto;
+    text-align: center;
+
+    div {
+      @include animation-bottom-to-top;
+      animation-duration: 0.5s;
+    }
+  }
+}
