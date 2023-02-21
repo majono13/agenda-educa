@@ -1,0 +1,59 @@
+<div *ngIf="screenWidth > 768" class="desktop">
+  <mat-accordion>
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Alunos
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <p routerLink="/user/alunos" routerLinkActive="router-active">
+        Meus alunos
+        <mat-icon>people_alt</mat-icon>
+      </p>
+      <p>
+        <span>Novo aluno</span>
+        <mat-icon>person_add</mat-icon>
+      </p>
+    </mat-expansion-panel>
+
+     <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Provas
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <p>
+        Provas
+        <mat-icon>format_list_bulleted</mat-icon>
+      </p>
+      <p>
+        <span>Nova Prova</span>
+        <mat-icon>format_list_bulleted_add</mat-icon>
+      </p>
+    </mat-expansion-panel>
+  </mat-accordion>
+</div>
+
+<div *ngIf="screenWidth <= 768" class="mobile">
+    <section>
+      <button mat-icon-button (click)="show('alunos')">
+        <mat-icon matTooltip="Alunos">people_alt</mat-icon>
+      </button>
+
+      <div *ngIf="showColumn === 'alunos'">
+        <p>Meus alunos </p>
+        <p>Novo aluno</p>
+      </div>
+    </section>
+
+    <section>
+      <button mat-icon-button (click)="show('provas')">
+        <mat-icon matTooltip="Provas">school</mat-icon>
+      </button>
+
+      <div *ngIf="showColumn === 'provas'">
+        <p>Provas </p>
+        <p>Nova Prova</p>
+      </div>
+    </section>
+</div>

@@ -44,5 +44,13 @@ namespace EducaApi.Infra.Data.Repositories
             return await _db.Teachers.FirstOrDefaultAsync(teacher => teacher.Id == id);
         }
         #endregion
+
+        #region Get teacher by email
+        /** Método assíncrono para buscar professor por email **/
+        public async Task<Teacher> GetTeacherByEmailAsync(string email)
+        {
+            return await _db.Teachers.FirstOrDefaultAsync(teacher => teacher.Email == email);
+        }
+        #endregion
     }
 }

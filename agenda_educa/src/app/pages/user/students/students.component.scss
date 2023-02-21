@@ -1,0 +1,13 @@
+@use "../../../../styles/index.scss" as *;
+
+table {
+  width: 100%;
+  background-color: $gray;
+}
+
+::ng-deep tbody tr {
+  cursor: pointer !important;
+  &:hover {
+    background-color: #22587e17 !important;
+  }
+}

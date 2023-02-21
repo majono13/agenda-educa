@@ -1,0 +1,20 @@
+@use "../../../../styles/index.scss" as *;
+
+.content {
+  width: 100%;
+  min-height: 100%;
+  background-color: $gray;
+
+  section {
+    display: flex;
+    min-height: 100%;
+  }
+  .router {
+    width: 100%;
+
+    @include screenMedium {
+      width: calc(100% - 16rem);
+      margin: 1rem 1rem 1rem 17rem;
+    }
+  }
+}

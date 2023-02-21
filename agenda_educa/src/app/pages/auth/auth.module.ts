@@ -14,6 +14,10 @@ import { ResetPasswordComponent } from './reset-password/reset-password.componen
 import { StepOneComponent } from './register/step-one/step-one.component';
 import { StepTwoComponent } from './register/step-two/step-two.component';
 
+//Interceptor
+import { HttpRequestInterceptor } from 'src/app/interceptors/http.interceptor';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+
 @NgModule({
   declarations: [
     RegisterComponent,
@@ -28,6 +32,13 @@ import { StepTwoComponent } from './register/step-two/step-two.component';
     SharedModule,
     ReactiveFormsModule,
     NgxMaskModule,
+  ],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: HttpRequestInterceptor,
+      multi: true,
+    },
   ],
 })
 export class AuthModule {}

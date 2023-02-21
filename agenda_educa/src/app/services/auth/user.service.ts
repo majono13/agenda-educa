@@ -1,17 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import {
-  BehaviorSubject,
-  Observable,
-  catchError,
-  debounceTime,
-  delay,
-  distinctUntilChanged,
-  map,
-  of,
-  take,
-  tap,
-} from 'rxjs';
+import { BehaviorSubject, Observable, map, of, take, tap } from 'rxjs';
 import { User } from 'src/app/models/user.model';
 import { environment } from 'src/environments/environment';
 import { TokenService } from './token.service';
@@ -23,9 +12,7 @@ import { LoginResponse } from 'src/app/models/loginResponse.model';
 })
 export class UserService {
   private readonly url = `${environment.URL}/user`;
-  private _subUserEmail$: BehaviorSubject<string> = new BehaviorSubject<string>(
-    null
-  );
+  private _UserEmail: string = '';
   private _subLoggedIn$: BehaviorSubject<boolean> =
     new BehaviorSubject<boolean>(false);
 
@@ -62,7 +49,7 @@ export class UserService {
         tap((res) => {
           this._tokenService.setToken(res.data.token.access_token),
             this._subLoggedIn$.next(true),
-            this._subUserEmail$.next(res.data.email);
+            (this._UserEmail = res.data.email);
         })
       );
   }
@@ -82,12 +69,12 @@ export class UserService {
    * **/
   checkTokenValidation(token: string): Observable<boolean> {
     return this._http.get<any>(`${this.url}/token/${token}`).pipe(
-      tap((res) => this.updateSubjectsLoggedInAndEmail(res?.data)),
-      map((res) => (res ? true : false)),
-      catchError((err) => {
+      tap((res) => this.updateSubjectLoggedInAndEmail(res?.data)),
+      map((res) => (res ? true : false))
+      /*catchError((err) => {
         this.logout();
         return of(false);
-      })
+      })*/
     );
   }
 
@@ -95,14 +82,14 @@ export class UserService {
   getSubLoggedIn$(): Observable<boolean> {
     return this._subLoggedIn$.asObservable();
   }
-  getSubUserEmail$(): Observable<string> {
-    return this._subUserEmail$.asObservable();
+  getUserEmail(): string {
+    return this._UserEmail;
   }
 
   /** Método privado para atualizar informações de usuário logado **/
-  private updateSubjectsLoggedInAndEmail(email: string) {
+  private updateSubjectLoggedInAndEmail(email: string) {
     if (email) {
-      this._subUserEmail$.next(email);
+      this._UserEmail = email;
       this._subLoggedIn$.next(true);
     }
   }
@@ -111,6 +98,6 @@ export class UserService {
   logout() {
     this._tokenService.removeToken();
     this._subLoggedIn$.next(false);
-    this._subUserEmail$.next(null);
+    this._UserEmail = null;
   }
 }

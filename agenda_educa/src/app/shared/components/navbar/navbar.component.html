@@ -1,0 +1,15 @@
+<mat-toolbar>
+  <div class="logo">
+    <app-logo _class="logo-small"></app-logo>
+  </div>
+  <button mat-icon-button [matMenuTriggerFor]="menu">
+    <mat-icon>menu</mat-icon>
+  </button>
+  <mat-menu #menu="matMenu">
+    <span>Olá, {{(teacher$ | async)?.firstname}}</span>
+  <button mat-menu-item (click)="logout()">
+    <mat-icon>exit_to_app</mat-icon>
+    <span>Sair</span>
+  </button>
+</mat-menu>
+</mat-toolbar>
