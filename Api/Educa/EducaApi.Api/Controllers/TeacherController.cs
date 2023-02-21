@@ -1,7 +1,6 @@
 ﻿using EducaApi.Application.DTOs;
 using EducaApi.Application.Services.Interfaces;
 using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace EducaApi.Api.Controllers
@@ -37,6 +36,20 @@ namespace EducaApi.Api.Controllers
         public async Task<ActionResult> GetTeacherByIdAsync(int id)
         {
             var result = await _teacherService.GetTeacherByIdAsync(id);
+
+            if (result.IsSuccess)
+                return Ok(result);
+
+            return BadRequest(result);
+        }
+
+        //Método get para buscar professor por email
+        [HttpGet]
+        [Route("get-teacher-by-email/{email}")]
+        [Authorize]
+        public async Task<ActionResult> GetTeacherByEmailAsync(string email)
+        {
+            var result = await _teacherService.GetTeacherByEmailAsync(email);
 
             if (result.IsSuccess)
                 return Ok(result);

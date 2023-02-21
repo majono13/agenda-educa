@@ -1,4 +1,4 @@
-import { ModuleWithProviders, NgModule } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 //Modulos
@@ -13,7 +13,10 @@ import { LoginComponent } from './login/login.component';
 import { ResetPasswordComponent } from './reset-password/reset-password.component';
 import { StepOneComponent } from './register/step-one/step-one.component';
 import { StepTwoComponent } from './register/step-two/step-two.component';
+
+//Interceptor
 import { HttpRequestInterceptor } from 'src/app/interceptors/http.interceptor';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -30,12 +33,12 @@ import { HttpRequestInterceptor } from 'src/app/interceptors/http.interceptor';
     ReactiveFormsModule,
     NgxMaskModule,
   ],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: HttpRequestInterceptor,
+      multi: true,
+    },
+  ],
 })
-export class AuthModule {
-  static forRoot(): ModuleWithProviders<any> {
-    return {
-      ngModule: AuthModule,
-      providers: [HttpRequestInterceptor],
-    };
-  }
-}
+export class AuthModule {}

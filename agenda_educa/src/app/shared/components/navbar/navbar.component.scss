@@ -1,7 +1,7 @@
 @use "../../../../styles/index.scss" as *;
 
 mat-toolbar {
-  justify-content: space-between;
+  justify-content: space-around;
   box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.281);
   background-color: $primary-300;
 
@@ -10,8 +10,8 @@ mat-toolbar {
   @include screenMedium {
     top: 0;
   }
+}
 
-  @include screenExtraLarge {
-    justify-content: space-around;
-  }
+span {
+  padding: 1rem !important;
 }

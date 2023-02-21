@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { StudentsService } from 'src/app/services/user/students.service';
+import { TeacherService } from 'src/app/services/shared/teacher.service';
 
 @Component({
   selector: 'app-home',
@@ -7,9 +7,7 @@ import { StudentsService } from 'src/app/services/user/students.service';
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent implements OnInit {
-  constructor(private _studentService: StudentsService) {}
+  constructor(private _teacherService: TeacherService) {}
 
-  ngOnInit(): void {
-    this._studentService.getAllStudents().subscribe((res) => console.log(res));
-  }
+  ngOnInit(): void {}
 }

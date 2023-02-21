@@ -44,7 +44,7 @@ namespace EducaApi.Application.Services
         #endregion
 
 
-        #region Get teacher by email
+        #region Get teacher by id
         /** Método assíncrono para buscar professor por id **/
         public async Task<ResultService<TeacherDto>> GetTeacherByIdAsync(int id)
         {
@@ -79,6 +79,20 @@ namespace EducaApi.Application.Services
 
             await _teacherRepository.EditTeacherAsync(teacher);
             return ResultService.Ok("Editado com sucesso!");
+        }
+        #endregion
+
+        #region Get teacher by email
+        /** Método assíncrono para buscar professor por email **/
+
+        public async Task<ResultService<TeacherDto>> GetTeacherByEmailAsync(string email)
+        {
+            var result = await _teacherRepository.GetTeacherByEmailAsync(email);
+
+            if(result == null)
+                return ResultService.Fail<TeacherDto>("Não foram encontrados dados correspondentes a requisição");
+
+            return ResultService.Ok<TeacherDto>(_mapper.Map<TeacherDto>(result));
         }
         #endregion
     }

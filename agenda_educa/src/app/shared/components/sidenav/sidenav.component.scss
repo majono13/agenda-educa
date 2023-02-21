@@ -27,8 +27,10 @@ p {
   align-items: center;
   justify-content: space-between;
   cursor: pointer;
+  padding-bottom: 5px;
   &:hover {
-    opacity: 0.8;
+    color: $primary-800;
+    border-bottom: 1px solid $primary-800;
   }
 }
 
@@ -60,4 +62,9 @@ p {
       animation-duration: 0.5s;
     }
   }
+}
+
+.router-active {
+  color: $primary-800;
+  border-bottom: 1px solid $primary-800;
 }
