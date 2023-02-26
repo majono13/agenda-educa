@@ -1,8 +1,32 @@
 @use "../../../../styles/index.scss" as *;
 
-table {
-  width: 100%;
-  background-color: $gray;
+.content {
+  height: calc(90vh - 5rem);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  @include screenMedium {
+    min-height: calc(100vh - 5rem);
+  }
+}
+
+.main {
+  // margin-right: 1rem;
+  table {
+    width: 100%;
+    background-color: $gray;
+  }
+  padding-bottom: 1rem;
+}
+
+.mat-paginator {
+  background: $gray;
+}
+
+.loading {
+  position: relative;
+  @include loading-screen;
 }
 
 ::ng-deep tbody tr {

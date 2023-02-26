@@ -11,7 +11,35 @@ import { MatExpansionModule } from '@angular/material/expansion';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatTableModule } from '@angular/material/table';
+import {
+  MatPaginatorIntl,
+  MatPaginatorModule,
+} from '@angular/material/paginator';
 
+/** Configurações do paginator **/
+const rangeLabel = (page: number, pageSize: number, length: number) => {
+  if (length == 0 || pageSize == 0) {
+    return `0 de ${length}`;
+  }
+  length = Math.max(length, 0);
+  const startIndex = page * pageSize;
+  const endIndex =
+    startIndex < length
+      ? Math.min(startIndex + pageSize, length)
+      : startIndex + pageSize;
+  return `${startIndex + 1} - ${endIndex} de ${length}`;
+};
+
+export function getIntl() {
+  const paginatorIntl = new MatPaginatorIntl();
+  paginatorIntl.itemsPerPageLabel = 'Quantidade por página:';
+  paginatorIntl.nextPageLabel = 'Próxima página';
+  paginatorIntl.previousPageLabel = 'Página anterior';
+  paginatorIntl.firstPageLabel = 'Primeira página';
+  paginatorIntl.lastPageLabel = 'Última página';
+  paginatorIntl.getRangeLabel = rangeLabel;
+  return paginatorIntl;
+}
 @NgModule({
   declarations: [],
   imports: [
@@ -25,6 +53,7 @@ import { MatTableModule } from '@angular/material/table';
     MatExpansionModule,
     MatMenuModule,
     MatTableModule,
+    MatPaginatorModule,
   ],
   exports: [
     MatToolbarModule,
@@ -37,6 +66,8 @@ import { MatTableModule } from '@angular/material/table';
     MatTooltipModule,
     MatMenuModule,
     MatTableModule,
+    MatPaginatorModule,
   ],
+  providers: [{ provide: MatPaginatorIntl, useValue: getIntl() }],
 })
 export class MaterialModule {}

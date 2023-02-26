@@ -18,7 +18,10 @@ export class NavbarComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
+    //chama método que busca os dados do professor a atualiza os subjects
     this._teacherService.getTeacherByUserEmail().subscribe();
+
+    //atribui subject atualizado a variável
     this.teacher$ = this._teacherService.getTeacher();
   }
 

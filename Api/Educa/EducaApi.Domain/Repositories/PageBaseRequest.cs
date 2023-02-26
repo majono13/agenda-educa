@@ -9,7 +9,7 @@
         public PageBaseRequest()
         {
             Page = 1;
-            PageSize = 2;
+            PageSize = 1;
             OrderByPropety = "Id";
         }
     }

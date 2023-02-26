@@ -7,14 +7,16 @@
 
   section {
     display: flex;
-    min-height: 100%;
   }
   .router {
     width: 100%;
-
+    max-height: 100vh;
+    overflow-y: scroll;
     @include screenMedium {
       width: calc(100% - 16rem);
-      margin: 1rem 1rem 1rem 17rem;
+      margin: 0 1rem 0rem 17rem;
     }
   }
 }
+
+@include scroll;
