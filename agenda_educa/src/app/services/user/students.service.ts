@@ -4,7 +4,8 @@ import { Student } from 'src/app/models/student.model';
 import { Response } from 'src/app/models/apiResponse.model';
 import { environment } from 'src/environments/environment';
 import { UserService } from '../auth/user.service';
-import { map } from 'rxjs';
+import { Observable, map } from 'rxjs';
+import { PagedResponse } from 'src/app/models/pagedBaseResponse.model';
 
 @Injectable({
   providedIn: 'root',
@@ -14,9 +15,20 @@ export class StudentsService {
 
   constructor(private _http: HttpClient) {}
 
-  getStudentsByTeacherId(id: number) {
-    return this._http
+  getStudentsByTeacherId(
+    page: number,
+    pageSize: number,
+    filter: string,
+    teacherId: number
+  ): Observable<Response<PagedResponse<Student[]>>> {
+    page++;
+    const orderBy = 'Name';
+
+    return this._http.get<Response<any>>(
+      `${this.url}/pagination/${teacherId}?Page=${page}&PageSize=${pageSize}&OrderByPropety=${orderBy}`
+    );
+    /*return this._http
       .get<Response<Student[]>>(`${this.url}/get-students/${id}`)
-      .pipe(map((res) => res?.data));
+      .pipe(map((res) => res?.data));*/
   }
 }

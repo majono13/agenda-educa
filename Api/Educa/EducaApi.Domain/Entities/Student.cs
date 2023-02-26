@@ -44,7 +44,7 @@ namespace EducaApi.Domain.Entities
 
             #region Class
             DomainValidationException.When(string.IsNullOrEmpty(@class), "Informe a classse do aluno");
-            DomainValidationException.When(school.Length > 15, "A classe deve ter no máximo 15 caracteres");
+            DomainValidationException.When(@class.Length > 15, "A classe deve ter no máximo 15 caracteres");
             #endregion
 
             Name = name;

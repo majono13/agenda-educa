@@ -10,7 +10,7 @@ namespace EducaApi.Infra.Data.Repositories
         {
             var response = new TResponse();
             var count = await query.CountAsync();
-            response.TotalPages = (int)Math.Abs((double)count / request.PageSize);
+            response.TotalPages = (int)Math.Ceiling((double)count / request.PageSize);
             response.TotalRegisters = count;
 
             if (string.IsNullOrEmpty(request.OrderByPropety))

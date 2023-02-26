@@ -1,0 +1,91 @@
+@use "../../../../styles/index.scss" as *;
+
+.content {
+  min-height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  @include screenSmall {
+    height: 10vh;
+  }
+
+  section {
+    position: relative;
+
+    .img {
+      width: 200px;
+      position: absolute;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .circle-img {
+      position: absolute;
+      z-index: 1;
+      background-color: $primary-500;
+      border-radius: 50%;
+
+      animation: animation-img 1s ease-in infinite alternate;
+    }
+
+    img {
+      position: absolute;
+      z-index: 99;
+    }
+
+    .loading {
+      position: absolute;
+      margin-top: 120px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    p {
+      width: 100px;
+      color: $primary-800;
+      font-size: 1.2rem;
+      &::after {
+        content: "";
+        animation: animation 1s linear infinite;
+      }
+    }
+  }
+}
+
+@keyframes animation-img {
+  to {
+    width: 0px;
+    height: 0px;
+  }
+
+  from {
+    width: 80px;
+    height: 80px;
+  }
+}
+
+@keyframes animation {
+  25% {
+    content: ".";
+  }
+  50% {
+    content: "..";
+  }
+  75% {
+    content: "...";
+  }
+  100% {
+    content: "";
+  }
+  /* from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0.2;
+  }*/
+}

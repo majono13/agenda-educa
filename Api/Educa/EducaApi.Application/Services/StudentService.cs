@@ -68,8 +68,7 @@ namespace EducaApi.Application.Services
             var studentPaged = await _studentRespository.GetPagedAsync(studentFilterDb, teacherId);
             //Mapeamento para o DTO
             var result = new PageBaseResponseDTO<StudentDTO>(
-                    studentPaged.TotalRegisters, _mapper.Map<List<StudentDTO>>(studentPaged.Data));
-
+                    studentPaged.TotalRegisters, _mapper.Map<List<StudentDTO>>(studentPaged.Data), studentPaged.TotalPages);
             return ResultService.Ok(result);
         }
         #endregion

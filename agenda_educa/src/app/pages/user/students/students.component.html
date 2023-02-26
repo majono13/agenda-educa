@@ -1,26 +1,38 @@
-<table mat-table [dataSource]="dataSource | async">
+<div class="content">
 
+<div *ngIf="dataSource?.data.length <= 0" class="loading">
+  <app-loading-screen></app-loading-screen>
+</div>
 
-  <!-- Coluna nome -->
-  <ng-container matColumnDef="name">
-    <th mat-header-cell *matHeaderCellDef> Nome </th>
-    <td mat-cell *matCellDef="let student"> {{student?.name}} </td>
-  </ng-container>
+<div class="main" *ngIf="dataSource?.data.length > 0">
+  <table mat-table [dataSource]="dataSource">
 
-  <!-- Coluna escola -->
-  <ng-container matColumnDef="school">
-    <th mat-header-cell *matHeaderCellDef> Escola </th>
-    <td mat-cell *matCellDef="let student"> {{student?.school}} </td>
-  </ng-container>
-
-    <!-- Coluna classe -->
-    <ng-container matColumnDef="class">
-      <th mat-header-cell *matHeaderCellDef> Classe </th>
-      <td mat-cell *matCellDef="let student"> {{student?.class}} </td>
+    <!-- Coluna nome -->
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef> Nome </th>
+      <td mat-cell *matCellDef="let student"> {{student?.name}} </td>
     </ng-container>
 
+    <!-- Coluna escola -->
+    <ng-container matColumnDef="school">
+      <th mat-header-cell *matHeaderCellDef> Escola </th>
+      <td mat-cell *matCellDef="let student"> {{student?.school}} </td>
+    </ng-container>
 
+      <!-- Coluna classe -->
+      <ng-container matColumnDef="class">
+        <th mat-header-cell *matHeaderCellDef> Classe </th>
+        <td mat-cell *matCellDef="let student"> {{student?.class}} </td>
+      </ng-container>
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+</div>
 
-  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-</table>
+<mat-paginator [length]="totalItems"
+    [pageSize]="paginatorHelper?.PageSize"
+    [pageSizeOptions]="[5, 10, 25, 100]"
+    showFirstLastButtons>
+</mat-paginator>
+</div>
+
