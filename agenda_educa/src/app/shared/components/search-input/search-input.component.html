@@ -1,0 +1,12 @@
+<div class="row">
+  <form [formGroup]="searchForm">
+    <mat-form-field appearance="outline" class="col-12 col-md-7 col-xl-4">
+      <mat-label>Pesquisar</mat-label>
+      <input matInput [placeholder]="message" formControlName="search" autocomplete="off">
+      <mat-icon matSuffix *ngIf="!loading">search</mat-icon>
+      <mat-icon matSuffix *ngIf="loading">
+        <app-spinner></app-spinner>
+      </mat-icon>
+    </mat-form-field>
+  </form>
+</div>

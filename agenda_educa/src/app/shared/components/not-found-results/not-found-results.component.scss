@@ -1,0 +1,7 @@
+@use "../../../../styles/index.scss" as *;
+
+p {
+  @include paragraphSmall;
+  color: $primary-800;
+  margin: 0 1rem;
+}

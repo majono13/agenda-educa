@@ -5,6 +5,8 @@ import { TeacherService } from 'src/app/services/shared/teacher.service';
 import { PaginatorHelper } from 'src/app/helpers/paginator.helper';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
+import { FormBuilder, FormGroup } from '@angular/forms';
+import { debounceTime, distinctUntilChanged } from 'rxjs';
 
 @Component({
   selector: 'app-students',
@@ -22,13 +24,34 @@ export class StudentsComponent implements OnInit, AfterViewInit {
   filter: string = '';
   teacherId: number = null;
 
+  //Pesquisa
+  searchForm: FormGroup;
+  loading: boolean = true;
+  dataFound: boolean = null;
+
   constructor(
     private _studentsService: StudentsService,
-    private _teacherService: TeacherService
+    private _teacherService: TeacherService,
+    private _fb: FormBuilder
   ) {}
 
   ngOnInit(): void {
     this.getStudentsByTeacherId();
+
+    this.searchForm = this._fb.group({
+      search: [''],
+    });
+
+    this.searchForm.controls['search'].valueChanges
+      .pipe(debounceTime(500), distinctUntilChanged())
+      .subscribe((value) => {
+        this.filter = value;
+        if (value.length >= 3 || value.length == 0) {
+          if (this.paginator) this.paginator.pageIndex = 0;
+
+          this.loadList(this.teacherId);
+        }
+      });
   }
 
   ngAfterViewInit(): void {
@@ -51,6 +74,7 @@ export class StudentsComponent implements OnInit, AfterViewInit {
   }
 
   loadList(teacherId: number) {
+    this.loading = true;
     this._studentsService
       .getStudentsByTeacherId(
         this.paginator?.pageIndex ?? 0,
@@ -60,9 +84,14 @@ export class StudentsComponent implements OnInit, AfterViewInit {
       )
       .toPromise()
       .then((res) => {
+        this.loading = false;
         if (res?.isSuccess) {
           this.dataSource.data = res?.data?.data;
           this.totalItems = res?.data?.totalRegisters;
+
+          if (this.filter.length > 3 || res?.data?.data.length <= 0)
+            this.dataFound = false;
+          else this.dataFound = true;
         }
       });
   }
