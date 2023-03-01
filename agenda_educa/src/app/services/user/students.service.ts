@@ -25,7 +25,7 @@ export class StudentsService {
     const orderBy = 'Name';
 
     return this._http.get<Response<any>>(
-      `${this.url}/pagination/${teacherId}?Page=${page}&PageSize=${pageSize}&OrderByPropety=${orderBy}`
+      `${this.url}/pagination/${teacherId}?Page=${page}&PageSize=${pageSize}&OrderByPropety=${orderBy}&Name=${filter}`
     );
     /*return this._http
       .get<Response<Student[]>>(`${this.url}/get-students/${id}`)
