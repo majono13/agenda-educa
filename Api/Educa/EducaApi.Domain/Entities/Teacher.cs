@@ -16,6 +16,7 @@ namespace EducaApi.Domain.Entities
         public string Email { get; private set; }
         public virtual ICollection<Student> Students { get; private set; }
         public virtual User User { get; private set; }
+        public virtual ICollection<School> Schools { get; private set; }
 
         public Teacher()
         {}

@@ -10,6 +10,7 @@ namespace EducaApi.Infra.Data.Maps
         {
             builder.HasOne(s => s.Teacher)
                 .WithMany(t => t.Students);
+
         }
     }
 }

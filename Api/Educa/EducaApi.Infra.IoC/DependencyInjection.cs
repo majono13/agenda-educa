@@ -24,6 +24,7 @@ namespace EducaApi.Infra.IoC
             services.AddScoped<ITeacherRepository, TeacherRepository>();
             services.AddScoped<IStudentRepository, StudentRepository>();
             services.AddScoped<IUserRepository, UserRepository>();
+            services.AddScoped<ISchoolRepository, SchoolRepository>();
             return services;
         }
 
@@ -34,6 +35,7 @@ namespace EducaApi.Infra.IoC
             services.AddScoped<IStudentService, StudentService>();
             services.AddScoped<IUserService, UserService>();
             services.AddScoped<ITokenGenerator, TokenGenerator>();
+            services.AddScoped<ISchoolService, SchoolService>();
             return services;
         }
 

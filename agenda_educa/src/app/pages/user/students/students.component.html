@@ -1,6 +1,6 @@
 <div class="content">
 
-  <div *ngIf="dataSource?.data.length <= 0 && filter.length == 0; else main"
+  <div *ngIf="loading && filter.length == 0; else main"
     class="loading">
     <app-loading-screen></app-loading-screen>
   </div>
