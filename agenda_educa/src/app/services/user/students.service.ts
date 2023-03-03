@@ -4,7 +4,7 @@ import { Student } from 'src/app/models/student.model';
 import { Response } from 'src/app/models/apiResponse.model';
 import { environment } from 'src/environments/environment';
 import { UserService } from '../auth/user.service';
-import { Observable, map } from 'rxjs';
+import { Observable, delay, map } from 'rxjs';
 import { PagedResponse } from 'src/app/models/pagedBaseResponse.model';
 
 @Injectable({
@@ -24,11 +24,10 @@ export class StudentsService {
     page++;
     const orderBy = 'Name';
 
-    return this._http.get<Response<any>>(
-      `${this.url}/pagination/${teacherId}?Page=${page}&PageSize=${pageSize}&OrderByPropety=${orderBy}&Name=${filter}`
-    );
-    /*return this._http
-      .get<Response<Student[]>>(`${this.url}/get-students/${id}`)
-      .pipe(map((res) => res?.data));*/
+    return this._http
+      .get<Response<any>>(
+        `${this.url}/pagination/${teacherId}?Page=${page}&PageSize=${pageSize}&OrderByPropety=${orderBy}&Name=${filter}`
+      )
+      .pipe(delay(1000));
   }
 }
