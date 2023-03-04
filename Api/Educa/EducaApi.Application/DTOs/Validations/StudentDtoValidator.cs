@@ -22,21 +22,6 @@ namespace EducaApi.Application.DTOs.Validations
                .WithMessage("O nome deve ter no máximo 50 caracteres");
             #endregion
 
-            #region School
-            RuleFor(X => X.School)
-           .NotEmpty()
-           .NotNull()
-           .WithMessage("Informe a escola do aluno");
-
-            RuleFor(X => X.School)
-             .MinimumLength(3)
-             .WithMessage("O nome da escola deve ter no mínimo 3 caracteres");
-
-            RuleFor(X => X.School)
-               .MaximumLength(50)
-               .WithMessage("O nome da escola  deve ter no máximo 50 caracteres");
-            #endregion
-
             #region Class
             RuleFor(X => X.Class)
                 .NotEmpty()

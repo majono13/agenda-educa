@@ -10,6 +10,21 @@ namespace EducaApi.Application.Profiles
         {
             CreateMap<Student, StudentDTO>();
             CreateMap<StudentDTO, Student>();
+            CreateMap<Student, StudentDetailDTO>()
+                .ForMember(x => x.School, opt => opt.Ignore())
+                .ConstructUsing((model, context) =>
+                {
+                    var dto = new StudentDetailDTO
+                    {
+                        School = model.School.Name,
+                        Id = model.Id,
+                        Class = model.Class,
+                        TeacherId = model.TeacherId,
+                        SchoolId = model.SchoolId
+                };
+
+                    return dto;
+                });
         }
     }
 }
