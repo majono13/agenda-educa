@@ -1,20 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Rian\\Desktop\\pags\\angular\\agenda-educa\\Api\\Educa\\EducaApi.Api\\EducaApi.Api.csproj": {}
+    "C:\\Users\\maria\\OneDrive\\Documentos\\GitHub\\agenda-educa\\Api\\Educa\\EducaApi.Api\\EducaApi.Api.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Rian\\Desktop\\pags\\angular\\agenda-educa\\Api\\Educa\\EducaApi.Api\\EducaApi.Api.csproj": {
+    "C:\\Users\\maria\\OneDrive\\Documentos\\GitHub\\agenda-educa\\Api\\Educa\\EducaApi.Api\\EducaApi.Api.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Rian\\Desktop\\pags\\angular\\agenda-educa\\Api\\Educa\\EducaApi.Api\\EducaApi.Api.csproj",
+        "projectUniqueName": "C:\\Users\\maria\\OneDrive\\Documentos\\GitHub\\agenda-educa\\Api\\Educa\\EducaApi.Api\\EducaApi.Api.csproj",
         "projectName": "EducaApi.Api",
-        "projectPath": "C:\\Users\\Rian\\Desktop\\pags\\angular\\agenda-educa\\Api\\Educa\\EducaApi.Api\\EducaApi.Api.csproj",
-        "packagesPath": "C:\\Users\\Rian\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Rian\\Desktop\\pags\\angular\\agenda-educa\\Api\\Educa\\EducaApi.Api\\obj\\",
+        "projectPath": "C:\\Users\\maria\\OneDrive\\Documentos\\GitHub\\agenda-educa\\Api\\Educa\\EducaApi.Api\\EducaApi.Api.csproj",
+        "packagesPath": "C:\\Users\\maria\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\maria\\OneDrive\\Documentos\\GitHub\\agenda-educa\\Api\\Educa\\EducaApi.Api\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\Rian\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\maria\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -22,14 +26,15 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\Rian\\Desktop\\pags\\angular\\agenda-educa\\Api\\Educa\\EducaApi.Infra.IoC\\EducaApi.Infra.IoC.csproj": {
-                "projectPath": "C:\\Users\\Rian\\Desktop\\pags\\angular\\agenda-educa\\Api\\Educa\\EducaApi.Infra.IoC\\EducaApi.Infra.IoC.csproj"
+              "C:\\Users\\maria\\OneDrive\\Documentos\\GitHub\\agenda-educa\\Api\\Educa\\EducaApi.Infra.IoC\\EducaApi.Infra.IoC.csproj": {
+                "projectPath": "C:\\Users\\maria\\OneDrive\\Documentos\\GitHub\\agenda-educa\\Api\\Educa\\EducaApi.Infra.IoC\\EducaApi.Infra.IoC.csproj"
               }
             }
           }
@@ -78,21 +83,25 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.402\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.201\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\Rian\\Desktop\\pags\\angular\\agenda-educa\\Api\\Educa\\EducaApi.Application\\EducaApi.Application.csproj": {
+    "C:\\Users\\maria\\OneDrive\\Documentos\\GitHub\\agenda-educa\\Api\\Educa\\EducaApi.Application\\EducaApi.Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Rian\\Desktop\\pags\\angular\\agenda-educa\\Api\\Educa\\EducaApi.Application\\EducaApi.Application.csproj",
+        "projectUniqueName": "C:\\Users\\maria\\OneDrive\\Documentos\\GitHub\\agenda-educa\\Api\\Educa\\EducaApi.Application\\EducaApi.Application.csproj",
         "projectName": "EducaApi.Application",
-        "projectPath": "C:\\Users\\Rian\\Desktop\\pags\\angular\\agenda-educa\\Api\\Educa\\EducaApi.Application\\EducaApi.Application.csproj",
-        "packagesPath": "C:\\Users\\Rian\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Rian\\Desktop\\pags\\angular\\agenda-educa\\Api\\Educa\\EducaApi.Application\\obj\\",
+        "projectPath": "C:\\Users\\maria\\OneDrive\\Documentos\\GitHub\\agenda-educa\\Api\\Educa\\EducaApi.Application\\EducaApi.Application.csproj",
+        "packagesPath": "C:\\Users\\maria\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\maria\\OneDrive\\Documentos\\GitHub\\agenda-educa\\Api\\Educa\\EducaApi.Application\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\Rian\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\maria\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -100,14 +109,15 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\Rian\\Desktop\\pags\\angular\\agenda-educa\\Api\\Educa\\EducaApi.Domain\\EducaApi.Domain.csproj": {
-                "projectPath": "C:\\Users\\Rian\\Desktop\\pags\\angular\\agenda-educa\\Api\\Educa\\EducaApi.Domain\\EducaApi.Domain.csproj"
+              "C:\\Users\\maria\\OneDrive\\Documentos\\GitHub\\agenda-educa\\Api\\Educa\\EducaApi.Domain\\EducaApi.Domain.csproj": {
+                "projectPath": "C:\\Users\\maria\\OneDrive\\Documentos\\GitHub\\agenda-educa\\Api\\Educa\\EducaApi.Domain\\EducaApi.Domain.csproj"
               }
             }
           }
@@ -151,21 +161,25 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.402\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.201\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\Rian\\Desktop\\pags\\angular\\agenda-educa\\Api\\Educa\\EducaApi.Domain\\EducaApi.Domain.csproj": {
+    "C:\\Users\\maria\\OneDrive\\Documentos\\GitHub\\agenda-educa\\Api\\Educa\\EducaApi.Domain\\EducaApi.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Rian\\Desktop\\pags\\angular\\agenda-educa\\Api\\Educa\\EducaApi.Domain\\EducaApi.Domain.csproj",
+        "projectUniqueName": "C:\\Users\\maria\\OneDrive\\Documentos\\GitHub\\agenda-educa\\Api\\Educa\\EducaApi.Domain\\EducaApi.Domain.csproj",
         "projectName": "EducaApi.Domain",
-        "projectPath": "C:\\Users\\Rian\\Desktop\\pags\\angular\\agenda-educa\\Api\\Educa\\EducaApi.Domain\\EducaApi.Domain.csproj",
-        "packagesPath": "C:\\Users\\Rian\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Rian\\Desktop\\pags\\angular\\agenda-educa\\Api\\Educa\\EducaApi.Domain\\obj\\",
+        "projectPath": "C:\\Users\\maria\\OneDrive\\Documentos\\GitHub\\agenda-educa\\Api\\Educa\\EducaApi.Domain\\EducaApi.Domain.csproj",
+        "packagesPath": "C:\\Users\\maria\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\maria\\OneDrive\\Documentos\\GitHub\\agenda-educa\\Api\\Educa\\EducaApi.Domain\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\Rian\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\maria\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -173,6 +187,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -206,21 +221,25 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.402\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.201\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\Rian\\Desktop\\pags\\angular\\agenda-educa\\Api\\Educa\\EducaApi.Infra.Data\\EducaApi.Infra.Data.csproj": {
+    "C:\\Users\\maria\\OneDrive\\Documentos\\GitHub\\agenda-educa\\Api\\Educa\\EducaApi.Infra.Data\\EducaApi.Infra.Data.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Rian\\Desktop\\pags\\angular\\agenda-educa\\Api\\Educa\\EducaApi.Infra.Data\\EducaApi.Infra.Data.csproj",
+        "projectUniqueName": "C:\\Users\\maria\\OneDrive\\Documentos\\GitHub\\agenda-educa\\Api\\Educa\\EducaApi.Infra.Data\\EducaApi.Infra.Data.csproj",
         "projectName": "EducaApi.Infra.Data",
-        "projectPath": "C:\\Users\\Rian\\Desktop\\pags\\angular\\agenda-educa\\Api\\Educa\\EducaApi.Infra.Data\\EducaApi.Infra.Data.csproj",
-        "packagesPath": "C:\\Users\\Rian\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Rian\\Desktop\\pags\\angular\\agenda-educa\\Api\\Educa\\EducaApi.Infra.Data\\obj\\",
+        "projectPath": "C:\\Users\\maria\\OneDrive\\Documentos\\GitHub\\agenda-educa\\Api\\Educa\\EducaApi.Infra.Data\\EducaApi.Infra.Data.csproj",
+        "packagesPath": "C:\\Users\\maria\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\maria\\OneDrive\\Documentos\\GitHub\\agenda-educa\\Api\\Educa\\EducaApi.Infra.Data\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\Rian\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\maria\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -228,14 +247,15 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\Rian\\Desktop\\pags\\angular\\agenda-educa\\Api\\Educa\\EducaApi.Domain\\EducaApi.Domain.csproj": {
-                "projectPath": "C:\\Users\\Rian\\Desktop\\pags\\angular\\agenda-educa\\Api\\Educa\\EducaApi.Domain\\EducaApi.Domain.csproj"
+              "C:\\Users\\maria\\OneDrive\\Documentos\\GitHub\\agenda-educa\\Api\\Educa\\EducaApi.Domain\\EducaApi.Domain.csproj": {
+                "projectPath": "C:\\Users\\maria\\OneDrive\\Documentos\\GitHub\\agenda-educa\\Api\\Educa\\EducaApi.Domain\\EducaApi.Domain.csproj"
               }
             }
           }
@@ -295,21 +315,25 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.402\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.201\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\Rian\\Desktop\\pags\\angular\\agenda-educa\\Api\\Educa\\EducaApi.Infra.IoC\\EducaApi.Infra.IoC.csproj": {
+    "C:\\Users\\maria\\OneDrive\\Documentos\\GitHub\\agenda-educa\\Api\\Educa\\EducaApi.Infra.IoC\\EducaApi.Infra.IoC.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Rian\\Desktop\\pags\\angular\\agenda-educa\\Api\\Educa\\EducaApi.Infra.IoC\\EducaApi.Infra.IoC.csproj",
+        "projectUniqueName": "C:\\Users\\maria\\OneDrive\\Documentos\\GitHub\\agenda-educa\\Api\\Educa\\EducaApi.Infra.IoC\\EducaApi.Infra.IoC.csproj",
         "projectName": "EducaApi.Infra.IoC",
-        "projectPath": "C:\\Users\\Rian\\Desktop\\pags\\angular\\agenda-educa\\Api\\Educa\\EducaApi.Infra.IoC\\EducaApi.Infra.IoC.csproj",
-        "packagesPath": "C:\\Users\\Rian\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Rian\\Desktop\\pags\\angular\\agenda-educa\\Api\\Educa\\EducaApi.Infra.IoC\\obj\\",
+        "projectPath": "C:\\Users\\maria\\OneDrive\\Documentos\\GitHub\\agenda-educa\\Api\\Educa\\EducaApi.Infra.IoC\\EducaApi.Infra.IoC.csproj",
+        "packagesPath": "C:\\Users\\maria\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\maria\\OneDrive\\Documentos\\GitHub\\agenda-educa\\Api\\Educa\\EducaApi.Infra.IoC\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\Rian\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\maria\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -317,20 +341,21 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\Rian\\Desktop\\pags\\angular\\agenda-educa\\Api\\Educa\\EducaApi.Application\\EducaApi.Application.csproj": {
-                "projectPath": "C:\\Users\\Rian\\Desktop\\pags\\angular\\agenda-educa\\Api\\Educa\\EducaApi.Application\\EducaApi.Application.csproj"
+              "C:\\Users\\maria\\OneDrive\\Documentos\\GitHub\\agenda-educa\\Api\\Educa\\EducaApi.Application\\EducaApi.Application.csproj": {
+                "projectPath": "C:\\Users\\maria\\OneDrive\\Documentos\\GitHub\\agenda-educa\\Api\\Educa\\EducaApi.Application\\EducaApi.Application.csproj"
               },
-              "C:\\Users\\Rian\\Desktop\\pags\\angular\\agenda-educa\\Api\\Educa\\EducaApi.Domain\\EducaApi.Domain.csproj": {
-                "projectPath": "C:\\Users\\Rian\\Desktop\\pags\\angular\\agenda-educa\\Api\\Educa\\EducaApi.Domain\\EducaApi.Domain.csproj"
+              "C:\\Users\\maria\\OneDrive\\Documentos\\GitHub\\agenda-educa\\Api\\Educa\\EducaApi.Domain\\EducaApi.Domain.csproj": {
+                "projectPath": "C:\\Users\\maria\\OneDrive\\Documentos\\GitHub\\agenda-educa\\Api\\Educa\\EducaApi.Domain\\EducaApi.Domain.csproj"
               },
-              "C:\\Users\\Rian\\Desktop\\pags\\angular\\agenda-educa\\Api\\Educa\\EducaApi.Infra.Data\\EducaApi.Infra.Data.csproj": {
-                "projectPath": "C:\\Users\\Rian\\Desktop\\pags\\angular\\agenda-educa\\Api\\Educa\\EducaApi.Infra.Data\\EducaApi.Infra.Data.csproj"
+              "C:\\Users\\maria\\OneDrive\\Documentos\\GitHub\\agenda-educa\\Api\\Educa\\EducaApi.Infra.Data\\EducaApi.Infra.Data.csproj": {
+                "projectPath": "C:\\Users\\maria\\OneDrive\\Documentos\\GitHub\\agenda-educa\\Api\\Educa\\EducaApi.Infra.Data\\EducaApi.Infra.Data.csproj"
               }
             }
           }
@@ -366,7 +391,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.402\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.201\\RuntimeIdentifierGraph.json"
         }
       }
     }

@@ -10,5 +10,9 @@ namespace EducaApi.Domain.Repositories
     public interface ISchoolRepository
     {
         Task<School> CreateSchoolAsync(School school);
+        Task<ICollection<School>> GetSchoolsAsync(int teacherId);
+        Task<School> GetSchoolByIdAsync(int id);
+        Task DeleteSchoolAsync(School school);
+        Task EditSchoolAsync(School school);
     }
 }

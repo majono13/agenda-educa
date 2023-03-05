@@ -33,9 +33,14 @@
         <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
         <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
       </table>
-      <section *ngIf="!dataFound">
+      <section *ngIf="!dataFound && filter.length > 0 ">
         <app-not-found-results
           message='Não foram encontrados dados correspondentes a "{{filter}}"'></app-not-found-results>
+      </section>
+
+      <section *ngIf="!dataFound && filter.length == 0 ">
+        <app-not-found-results
+          message='Nenhum aluno Cadastrado'></app-not-found-results>
       </section>
     </div>
     </ng-template>

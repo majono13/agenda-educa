@@ -15,6 +15,7 @@ import {
   MatPaginatorIntl,
   MatPaginatorModule,
 } from '@angular/material/paginator';
+import {MatSelectModule} from '@angular/material/select';
 
 /** Configurações do paginator **/
 const rangeLabel = (page: number, pageSize: number, length: number) => {
@@ -54,6 +55,7 @@ export function getIntl() {
     MatMenuModule,
     MatTableModule,
     MatPaginatorModule,
+    MatSelectModule,
   ],
   exports: [
     MatToolbarModule,
@@ -67,6 +69,7 @@ export function getIntl() {
     MatMenuModule,
     MatTableModule,
     MatPaginatorModule,
+    MatSelectModule,
   ],
   providers: [{ provide: MatPaginatorIntl, useValue: getIntl() }],
 })

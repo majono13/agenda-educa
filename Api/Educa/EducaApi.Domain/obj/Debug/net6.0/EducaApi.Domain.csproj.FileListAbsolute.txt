@@ -22,3 +22,15 @@ C:\Users\Rian\Desktop\pags\angular\agenda-educa\Api\Educa\EducaApi.Domain\obj\De
 C:\Users\Rian\Desktop\pags\angular\agenda-educa\Api\Educa\EducaApi.Domain\obj\Debug\net6.0\refint\EducaApi.Domain.dll
 C:\Users\Rian\Desktop\pags\angular\agenda-educa\Api\Educa\EducaApi.Domain\obj\Debug\net6.0\EducaApi.Domain.pdb
 C:\Users\Rian\Desktop\pags\angular\agenda-educa\Api\Educa\EducaApi.Domain\obj\Debug\net6.0\ref\EducaApi.Domain.dll
+C:\Users\maria\OneDrive\Documentos\GitHub\agenda-educa\Api\Educa\EducaApi.Domain\bin\Debug\net6.0\EducaApi.Domain.deps.json
+C:\Users\maria\OneDrive\Documentos\GitHub\agenda-educa\Api\Educa\EducaApi.Domain\bin\Debug\net6.0\EducaApi.Domain.dll
+C:\Users\maria\OneDrive\Documentos\GitHub\agenda-educa\Api\Educa\EducaApi.Domain\bin\Debug\net6.0\EducaApi.Domain.pdb
+C:\Users\maria\OneDrive\Documentos\GitHub\agenda-educa\Api\Educa\EducaApi.Domain\obj\Debug\net6.0\EducaApi.Domain.csproj.AssemblyReference.cache
+C:\Users\maria\OneDrive\Documentos\GitHub\agenda-educa\Api\Educa\EducaApi.Domain\obj\Debug\net6.0\EducaApi.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\maria\OneDrive\Documentos\GitHub\agenda-educa\Api\Educa\EducaApi.Domain\obj\Debug\net6.0\EducaApi.Domain.AssemblyInfoInputs.cache
+C:\Users\maria\OneDrive\Documentos\GitHub\agenda-educa\Api\Educa\EducaApi.Domain\obj\Debug\net6.0\EducaApi.Domain.AssemblyInfo.cs
+C:\Users\maria\OneDrive\Documentos\GitHub\agenda-educa\Api\Educa\EducaApi.Domain\obj\Debug\net6.0\EducaApi.Domain.csproj.CoreCompileInputs.cache
+C:\Users\maria\OneDrive\Documentos\GitHub\agenda-educa\Api\Educa\EducaApi.Domain\obj\Debug\net6.0\EducaApi.Domain.dll
+C:\Users\maria\OneDrive\Documentos\GitHub\agenda-educa\Api\Educa\EducaApi.Domain\obj\Debug\net6.0\refint\EducaApi.Domain.dll
+C:\Users\maria\OneDrive\Documentos\GitHub\agenda-educa\Api\Educa\EducaApi.Domain\obj\Debug\net6.0\EducaApi.Domain.pdb
+C:\Users\maria\OneDrive\Documentos\GitHub\agenda-educa\Api\Educa\EducaApi.Domain\obj\Debug\net6.0\ref\EducaApi.Domain.dll

@@ -7,6 +7,7 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { debounceTime, distinctUntilChanged } from 'rxjs';
+import { StudentDetail } from 'src/app/models/studentDetail.model';
 
 @Component({
   selector: 'app-students',
@@ -19,7 +20,7 @@ export class StudentsComponent implements OnInit, AfterViewInit {
   paginatorHelper: typeof PaginatorHelper = PaginatorHelper;
   totalItems: number;
 
-  dataSource: MatTableDataSource<Student> = new MatTableDataSource<Student>();
+  dataSource: MatTableDataSource<StudentDetail> = new MatTableDataSource<StudentDetail>();
   displayedColumns = ['name', 'school', 'class'];
   filter: string = '';
   teacherId: number = null;
@@ -89,7 +90,7 @@ export class StudentsComponent implements OnInit, AfterViewInit {
           this.dataSource.data = res?.data?.data;
           this.totalItems = res?.data?.totalRegisters;
 
-          if (this.filter.length > 3 || res?.data?.data.length <= 0)
+          if (this.filter.length >= 3 && res?.data?.data.length == 0)
             this.dataFound = false;
           else this.dataFound = true;
         }

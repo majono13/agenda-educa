@@ -5,7 +5,7 @@ namespace EducaApi.Application.Services.Interfaces
 {
     public interface IStudentService
     {
-        Task <ResultService<StudentDetailDTO>> CreateStudentAsync(StudentDTO studentDTO);
+        Task <ResultService<StudentDTO>> CreateStudentAsync(StudentDTO studentDTO);
         Task<ResultService<StudentDetailDTO>> GetStudentByIdAsync(int id);
         Task<ResultService<ICollection<StudentDetailDTO>>> GetStudentsAsync(int teacherId);
         Task<ResultService> UpdateStudentAsync(StudentDTO studentDTO);

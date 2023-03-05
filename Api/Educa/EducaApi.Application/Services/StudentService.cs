@@ -24,16 +24,16 @@ namespace EducaApi.Application.Services
 
         #region Create student
         /** Método assíncrono para criar novo aluno**/
-        public async Task<ResultService<StudentDetailDTO>> CreateStudentAsync(StudentDTO studentDTO)
+        public async Task<ResultService<StudentDTO>> CreateStudentAsync(StudentDTO studentDTO)
         {
             //Validação do parâmetro
             if (studentDTO == null)
-                return ResultService.Fail<StudentDetailDTO>("Objeto deve ser informado!");
+                return ResultService.Fail<StudentDTO>("Objeto deve ser informado!");
 
             var result = new StudentDtoValidator().Validate(studentDTO);
 
             if (!result.IsValid)
-                return ResultService.RequestError<StudentDetailDTO>("Erro ao validar objeto", result);
+                return ResultService.RequestError<StudentDTO>("Erro ao validar objeto", result);
 
             //Mapeamento
             var student = _mapper.Map<Student>(studentDTO);
@@ -41,7 +41,7 @@ namespace EducaApi.Application.Services
             //Criação do dado no bd e retorno do serviço
             var data = await _studentRespository.CreateStudentAync(student);
 
-            return ResultService.Ok<StudentDetailDTO>(_mapper.Map<StudentDetailDTO>(data));
+            return ResultService.Ok<StudentDTO>(_mapper.Map<StudentDTO>(data));
         }
         #endregion
 
