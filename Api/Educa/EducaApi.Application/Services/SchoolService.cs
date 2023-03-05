@@ -48,5 +48,59 @@ namespace EducaApi.Application.Services
            return ResultService.Ok<SchoolDTO>(_mapper.Map<SchoolDTO>(data));
         }
         #endregion
+
+        #region Delete School
+        //Método assíncrono para deletar escola
+        public async Task<ResultService> DeleteSchoolAsync(int id)
+        {
+            var school = await _schoolRepository.GetSchoolByIdAsync(id);
+
+            if(school == null)
+                return ResultService.Fail("Não foram encontrados dados correspondentes a requisição");
+
+            await _schoolRepository.DeleteSchoolAsync(_mapper.Map<School>(school));
+
+            return ResultService.Ok($"A escola: {school.Name} foi excluída com sucesso!");
+        }
+        #endregion
+
+        #region Edit School
+        //Método assíncrono para editar escola
+        public async Task<ResultService> EditSchoolAsync(SchoolDTO schoolDTO)
+        {
+            //Validação de parâmetro
+            if(schoolDTO == null)
+                return ResultService.Fail<SchoolDTO>("Objeto deve ser informado!");
+
+            var result = new SchoolDtoValidator().Validate(schoolDTO);
+
+            if (!result.IsValid)
+                return ResultService.RequestError<SchoolDTO>("Erro ao validar objeto", result);
+
+            //Busca aluno no servidor
+            var school = await _schoolRepository.GetSchoolByIdAsync(schoolDTO.Id);
+            if(school == null) 
+                return ResultService.Fail<SchoolDTO>("Não foram encontrados dados correspondentes a requisição");
+
+            //Mapeamento e edição de dados
+            school = _mapper.Map<SchoolDTO, School>(schoolDTO, school);
+            await _schoolRepository.EditSchoolAsync(school);
+
+            return ResultService.Ok("Escola editada com sucesso!");
+        }
+        #endregion
+
+        #region Get Schools
+        //Método assíncrono para buscar escolas
+        public async Task<ResultService<ICollection<SchoolDTO>>> GetSchoolsAsync(int teacherId)
+        {
+            var schools = await _schoolRepository.GetSchoolsAsync(teacherId);
+
+            if (schools == null)
+                return ResultService.Fail<ICollection<SchoolDTO>>
+                    ("Não foram encontrados dados correspondentes a requisição");
+            return ResultService.Ok(_mapper.Map<ICollection<SchoolDTO>>(schools));
+        }
+        #endregion
     }
 }

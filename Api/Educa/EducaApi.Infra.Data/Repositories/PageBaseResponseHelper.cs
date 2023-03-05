@@ -5,16 +5,16 @@ namespace EducaApi.Infra.Data.Repositories
 {
     public static class PageBaseResponseHelper
     {
-        public static async Task<TResponse> GetResponseAsync<TResponse, T>(IQueryable<T> query, PageBaseRequest request)
+        public static async Task<TResponse> GetResponseAsync<TResponse, T>(ICollection<T> query, PageBaseRequest request)
             where TResponse : PageBaseResponse<T>, new()
         {
             var response = new TResponse();
-            var count = await query.CountAsync();
+            var count =  query.Count();
             response.TotalPages = (int)Math.Ceiling((double)count / request.PageSize);
             response.TotalRegisters = count;
 
             if (string.IsNullOrEmpty(request.OrderByPropety))
-                response.Data = await query.ToListAsync();
+                response.Data =  query;
 
             else
                 //Paginação do bd

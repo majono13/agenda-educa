@@ -51,11 +51,17 @@ namespace EducaApi.Infra.Data.Repositories
         public async Task<PageBaseResponse<Student>> GetPagedAsync(StudentFilterDb request, int teacherId)
         {
             //Query com todos os alunos
-            var students = _db.Students.AsQueryable().Where(x => x.TeacherId == teacherId);
+            var teacher = await _db.Teachers
+                .FirstOrDefaultAsync(x => x.Id == teacherId);
+
+            if (teacher == null)
+                return null;
+
+            var students = teacher.Students;
 
             //Realiza filtro de busca caso tenha sido passado
             if (!string.IsNullOrEmpty(request.Name))
-                students = students.Where(x => x.Name.Contains(request.Name));
+                students = students.Where(x => x.Name.Contains(request.Name, StringComparison.OrdinalIgnoreCase)).ToList();
 
             return await PageBaseResponseHelper.GetResponseAsync<PageBaseResponse<Student>, Student>(students, request);
 

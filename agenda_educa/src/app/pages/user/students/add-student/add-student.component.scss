@@ -1,0 +1,41 @@
+@use "../../../../../styles/index.scss" as *;
+
+.content {
+  overflow-x:hidden;
+  margin-top: 3rem;
+  h1 {
+    margin-left: 1rem;
+    padding-bottom: .5rem;
+    border-bottom: 1px solid $primary-500;
+    width: 170px;
+    @include paragraphMedium;
+    color: $primary-500;
+
+    @include screenMedium {
+      width: 230px;
+      @include paragraphLarge;
+    }
+  }
+  @include screenExtraLarge {
+    max-width: 1200px;
+    margin: 3rem auto;
+  }
+
+  form {
+    @include animation-rigth-to-left;
+  }
+
+  .button {
+    margin:2rem 1rem;
+    display: flex;
+    justify-content: flex-end;
+
+    button {
+      margin: .5rem;
+    }
+    #button-cancel{
+      @include button-white;
+      background-color: $gray;
+    }
+  }
+}

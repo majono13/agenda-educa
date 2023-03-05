@@ -1,4 +1,8 @@
-﻿namespace EducaApi.Application.DTOs
+﻿using EducaApi.Application.Services;
+using EducaApi.Domain.Entities;
+using System.Text.Json.Serialization;
+
+namespace EducaApi.Application.DTOs
 {
     public class SchoolDTO
     {
@@ -11,5 +15,7 @@
         public string District { get; set; }
         public string City { get; set; }
         public string State { get; set; }
+
+
     }
 }
