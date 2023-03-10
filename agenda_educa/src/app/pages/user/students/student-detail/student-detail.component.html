@@ -1,1 +1,31 @@
-<p>student-detail works!</p>
+<div class="content">
+
+  <div *ngIf="!student" class="loading">
+  <app-loading-screen></app-loading-screen>
+</div>
+
+  <section>
+    <mat-card *ngIf="student">
+      <mat-card-header>
+        <mat-card-title>{{student?.name}}
+          <mat-icon (click)="deleteStudent()" matTooltip="Excluir">delete</mat-icon>
+        </mat-card-title>
+        <mat-card-subtitle>Escola {{student?.school}}</mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-content>
+        <p>Classe: <span class="classe">{{student?.class}}</span></p>
+        <p>{{student?.observations}}</p>
+      </mat-card-content>
+      <mat-card-actions>
+        <button (click)="back()" id="back-button" mat-raised-button>Voltar</button>
+        <button *ngIf="!onEdit" mat-raised-button color="primary" (click)="edit()">Editar</button>
+        <button *ngIf="onEdit" mat-raised-button color="primary" (click)="edit()">Cancelar</button>
+      </mat-card-actions>
+    </mat-card>
+  </section>
+
+  <section class="form" *ngIf="onEdit">
+    <app-form-edit [onEdit]="onEdit" [student]="student"></app-form-edit>
+  </section>
+
+</div>

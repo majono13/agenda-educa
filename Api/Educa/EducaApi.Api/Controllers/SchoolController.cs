@@ -38,6 +38,19 @@ namespace EducaApi.Api.Controllers
             return BadRequest(result);
         }
 
+        //Método get para buscar escola por id
+        [HttpGet]
+        [Route("get-school/{schoolId}")]
+        public async Task<IActionResult> GetSchoolByIdAsync(int schoolId)
+        {
+            var result = await _schoolService.GetSchoolByIdAsync(schoolId);
+
+            if (result.IsSuccess)
+                return Ok(result);
+
+            return BadRequest(result);
+        }
+
         //Método put para Editar escola salva no banco
         [HttpPut]
         public async Task<ActionResult> UpdateStudentAsync([FromBody] SchoolDTO schoolDTO)

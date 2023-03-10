@@ -1,0 +1,64 @@
+@use "../../../../../styles/index.scss" as *;
+
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  height: 85vh;
+  padding: 0 1rem;
+  overflow-x: hidden;
+
+  @include screenLarge {
+    height: 90vh;
+  }
+
+  mat-card {
+    background-color: $gray;
+    box-shadow: none;
+    .show-students {
+      margin:1rem 0;
+      font-size: 1rem;
+      border: 2px solid $primary-500;
+      padding: 10px;
+      border-radius: 5px;
+      cursor: pointer;
+      text-align: center;
+      &:hover {
+        opacity: .8
+      }
+
+      @include screenMedium {
+        width: 200px;
+      }
+    }
+
+    mat-card-title {
+      color: $primary-500
+    }
+
+    span {
+      color: $primary-800;
+      font-weight:500;
+    }
+  }
+
+  //Estilização do card quando não está exibindo a lista de alunos
+  .normalize {
+    @include card;
+  }
+  #back-button {
+    @include button-white;
+    background-color: $gray;
+  }
+
+  .loading {
+    position: relative;
+    @include loading-screen;
+  }
+}
+
+.form-edit {
+  @include animation-rigth-to-left;
+}
+
+@include scroll;

@@ -59,6 +59,10 @@ namespace EducaApi.Infra.Data.Repositories
 
             var students = teacher.Students;
 
+            if (request.SchoolId != 0)
+                students = students.Where(x => x.SchoolId == request.SchoolId).ToList();
+
+
             //Realiza filtro de busca caso tenha sido passado
             if (!string.IsNullOrEmpty(request.Name))
                 students = students.Where(x => x.Name.Contains(request.Name, StringComparison.OrdinalIgnoreCase)).ToList();

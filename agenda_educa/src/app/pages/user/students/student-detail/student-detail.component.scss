@@ -1,0 +1,59 @@
+@use "../../../../../styles/index.scss" as *;
+
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  height: 80vh;
+  padding: 0 1rem;
+  overflow-x: hidden;
+
+  @include screenExtraLarge {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  @include screenMedium {
+    @include height;
+  }
+
+  mat-card {
+    @include card;
+
+    mat-card-title {
+      color: $primary-800;
+      display: flex;
+      align-items: center;
+
+      mat-icon {
+        cursor: pointer;
+      }
+    }
+
+    mat-card-subtitle {
+      color: $primary-500
+    }
+    .classe {
+      color: $primary-600;
+      font-weight:500;
+    }
+
+    #back-button {
+      @include button-white;
+      background-color: $gray;
+    }
+  }
+
+  @include screenMedium {
+    @include height;
+  }
+
+  .form {
+    margin-top: 2rem;
+  }
+
+  .loading {
+    position: relative;
+    @include loading-screen;
+  }
+}

@@ -12,6 +12,7 @@ namespace EducaApi.Application.DTOs
         public string Name { get; set; }
         public string School { get; set; }
         public string Class { get; set; }
+        public string? Observations { get; set; }
         public int TeacherId { get; set; }
         public int SchoolId { get; set; }
     }

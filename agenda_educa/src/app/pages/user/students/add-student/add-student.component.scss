@@ -3,6 +3,7 @@
 .content {
   overflow-x:hidden;
   margin-top: 3rem;
+  height: 70vh;
   h1 {
     margin-left: 1rem;
     padding-bottom: .5rem;
@@ -23,12 +24,20 @@
 
   form {
     @include animation-rigth-to-left;
+
+    textarea {
+      @include textarea;
+    }
   }
 
   .button {
-    margin:2rem 1rem;
+    margin-right: 1rem;
     display: flex;
     justify-content: flex-end;
+
+    @include screenMedium {
+      margin:2rem 1rem 0 1rem;
+    }
 
     button {
       margin: .5rem;
@@ -39,3 +48,5 @@
     }
   }
 }
+
+@include scroll;

@@ -1,0 +1,63 @@
+<div class="content">
+  <h1>Nova Escola</h1>
+  <form [formGroup]="form" #schoolForm="ngForm">
+    <div class="row">
+      <mat-form-field appearance="outline" class="col-12">
+        <mat-label>Nome</mat-label>
+        <input type="text" matInput placeholder="Digite o nome da escola" formControlName="name">
+        <mat-error *ngIf="form.controls['name']?.errors?.['required']">Campo obrigatório*</mat-error>
+        <mat-error *ngIf="form.controls['name']?.errors?.['minlength']">O nome deve ter no minímo 3
+          caracteres</mat-error>
+        <mat-error *ngIf="form.controls['name']?.errors?.['maxlength']">O nome deve ter no máximo 100
+          caracteres</mat-error>
+      </mat-form-field>
+    </div>
+
+    <div class="row">
+      <mat-form-field appearance="outline" class="col-12 col-md-4">
+        <mat-label>Cep</mat-label>
+        <input type="text" matInput placeholder="Digite o cep da escola" formControlName="cep"
+          (blur)="getAddress($event)" mask="00000-000">
+        <mat-hint *ngIf="invalidCep">Cep inválido</mat-hint>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="col-12 col-md-6">
+        <mat-label>Rua</mat-label>
+        <input matInput readonly formControlName="street">
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="col-12 col-md-2">
+        <mat-label>Número</mat-label>
+        <input type="number" matInput formControlName="number">
+        <mat-error *ngIf="form.controls['number']?.errors?.['required']">Campo obrigatório*</mat-error>
+        <mat-error *ngIf="form.controls['number']?.errors?.['maxlength']">Campo inválido</mat-error>
+      </mat-form-field>
+    </div>
+
+    <div class="row">
+      <mat-form-field appearance="outline" class="col-12 col-md-6">
+        <mat-label>Bairro</mat-label>
+        <input type="text" matInput readonly formControlName="district">
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="col-12 col-md-6">
+        <mat-label>Cidade</mat-label>
+        <input type="text" matInput readonly formControlName="city">
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="col-12 col-md-6">
+        <mat-label>Estado</mat-label>
+        <input type="text" matInput readonly formControlName="state">
+      </mat-form-field>
+    </div>
+  </form>
+
+  <div class="buttons">
+    <button mat-raised-button id="back-button" (click)="back()">Voltar</button>
+    <button *ngIf="!loading" mat-raised-button color="primary" [disabled]="form.invalid"
+      (click)="salve()">Salvar</button>
+    <button *ngIf="loading" mat-raised-button color="primary" disabled>
+      Carregando
+      <app-spinner></app-spinner>
+    </button>
+  </div>

@@ -1,3 +1,4 @@
+import { Location } from '@angular/common';
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
@@ -24,7 +25,8 @@ export class RegisterComponent implements OnInit {
     private _userService: UserService,
     private _teacherService: TeacherService,
     private _snackbar: SnackbarService,
-    private _router: Router
+    private _router: Router,
+    private _location: Location
   ) {}
 
   ngOnInit(): void {
@@ -124,5 +126,9 @@ export class RegisterComponent implements OnInit {
         this._router.navigate(['/login']);
       },
     });
+  }
+
+  back() {
+    this._location.back();
   }
 }

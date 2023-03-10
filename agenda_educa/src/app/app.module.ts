@@ -8,15 +8,17 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MAT_DATE_LOCALE } from '@angular/material/core';
 import { NgxMaskModule } from 'ngx-mask';
 import { HttpRequestInterceptor } from './interceptors/http.interceptor';
+import { PublicModule } from './pages/public/public.module';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     HttpClientModule,
     NgxMaskModule.forRoot(),
+    PublicModule,
   ],
   providers: [
     { provide: LOCALE_ID, useValue: 'pt-BR' }, // Usado para utilizar o Angular em pt-BR

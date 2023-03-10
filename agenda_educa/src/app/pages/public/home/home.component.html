@@ -1,0 +1,67 @@
+<div class="content">
+
+  <mat-toolbar>
+    <div class="actions">
+      <p (click)="login()">Entrar</p>
+      <p (click)="register()">Cadastre-se</p>
+    </div>
+  </mat-toolbar>
+
+  <main>
+    <header class="row">
+      <span class="section-container">
+        <section class="text col-6 col-md-4">
+          <h1>Agenda Educa</h1>
+          <p>Lorem ipsum, <span>dolor</span> sit amet consectetur adipisicing elit. Temporibus possimus repudiandae hic,
+            itaque nihil maiores <span>veniam</span> laborum ipsam illum <span>reprehenderit!</span></p>
+          <button (click)="register()" mat-raised-button color="accent">Cadastre-se</button>
+        </section>
+        <section class="img col-6 col-md-8">
+          <div class="circle"></div>
+          <img src="../../../../assets/images/people-home.webp" alt="Mulher de camisa jeans azul usando óculos">
+        </section>
+      </span>
+    </header>
+
+    <div class="section-2 section-container row" >
+      <section class="col-md-4">
+        <h2>Organize-se</h2>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Provident soluta sunt similique nisi atque harum
+          fuga excepturi tempora obcaecati rerum!</p>
+      </section>
+      <section class="books-img col-md-8">
+        <img src="../../../../assets/images/books-home.webp" alt="Pilha de livros com um livro aberto em cima">
+      </section>
+    </div>
+
+    <div class="section-3">
+      <section class="section-container">
+        <div>
+          <mat-card>
+            <mat-icon>sort</mat-icon>
+            <h3>Oraganize</h3>
+            <mat-card-content>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo, pariatur!</p>
+            </mat-card-content>
+          </mat-card>
+          <mat-card>
+            <mat-icon>moving</mat-icon>
+            <h3>Aprimore</h3>
+            <mat-card-content>
+              <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quisquam, officiis?</p>
+            </mat-card-content>
+          </mat-card>
+          <mat-card>
+            <mat-icon>dynamic_feed</mat-icon>
+            <h3>Desenvolva</h3>
+            <mat-card-content>
+              <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ducimus!</p>
+            </mat-card-content>
+          </mat-card>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <app-footer></app-footer>
+</div>

@@ -4,4 +4,5 @@ export interface Student {
   SchoolId: number;
   Class: string;
   TeacherId: number;
+  Observations?: string;
 }

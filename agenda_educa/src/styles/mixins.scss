@@ -151,8 +151,8 @@
 }
 
 @mixin animation-top-to-bottom {
-  animation: animation-entrance 1.5s linear;
-  -webkit-animation: animation-entrance 1.5s linear;
+  animation: animation-entrance 1s linear;
+  -webkit-animation: animation-entrance 1s linear;
 
   @keyframes animation-entrance {
     0% {
@@ -179,6 +179,13 @@
   }
 }
 
+//Textarea
+@mixin textarea {
+  height: 200px;
+  overflow-y: scroll;
+  resize: none;
+}
+
 //Scroll
 @mixin scroll {
   ::-webkit-scrollbar {
@@ -198,4 +205,11 @@
 //Altura layout usuário
 @mixin height {
   min-height: calc(100vh - 4rem);
+}
+
+//Cards
+@mixin card {
+  margin-top: 3rem;
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.507);
+  background-color: $todo;
 }

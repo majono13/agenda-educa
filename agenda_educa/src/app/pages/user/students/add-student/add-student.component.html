@@ -25,11 +25,18 @@
       </mat-select>
       <mat-error *ngIf="form.controls['school']?.errors?.['required']">Campo obrigatório*</mat-error>
     </mat-form-field>
+
+    <mat-form-field class="col-12" appearance="outline">
+      <mat-label>Observações (Opcional)</mat-label>
+      <textarea matInput formControlName="observations"></textarea>
+      <mat-error *ngIf="form.controls['observations']?.errors?.['maxlength']"></mat-error>
+    </mat-form-field>
+
   </form>
 
   <div class="button">
     <button mat-raised-button id="button-cancel" (click)="cancel()">Cancelar</button>
-    <button *ngIf="!loading" mat-raised-button color="primary" (click)="salve()">Salvar</button>
+    <button [disabled]="form.invalid" *ngIf="!loading" mat-raised-button color="primary" (click)="salve()">Salvar</button>
     <button *ngIf="loading" mat-raised-button color="primary" disabled>
       Carregando
       <app-spinner></app-spinner>

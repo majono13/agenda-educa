@@ -33,7 +33,8 @@ export class AddStudentComponent implements OnInit {
     this.form = this._fb.group({
       name: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(50)]],
       class: ['', [Validators.required, Validators.maxLength(15)]],
-      school: ['', [Validators.required]]
+      school: ['', [Validators.required]],
+      observations: ['', [Validators.maxLength(1500)]]
     });
   }
 
@@ -52,7 +53,8 @@ export class AddStudentComponent implements OnInit {
       Name: this.form.value?.name,
       Class: this.form.value?.class,
       SchoolId: this.form.value?.school,
-      TeacherId: this.teacherId
+      TeacherId: this.teacherId,
+      Observations: this.form.value.observations ?? ''
     };
 
     this._studentService.createStudent(student)

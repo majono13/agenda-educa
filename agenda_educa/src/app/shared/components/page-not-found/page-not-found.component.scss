@@ -1,0 +1,38 @@
+@use "../../../../styles/index.scss" as *;
+
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 100%;
+  width: 100%;
+  background-color: $gray;
+  overflow-x: hidden;
+
+  .not-found {
+    height: 70vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 1rem;
+    p {
+      text-align: center;
+      @include paragraphLarge;
+      color: $primary-500
+    }
+
+    button {
+      @include button-white;
+      width: 90%;
+      background-color: $gray;
+      margin-top: 1rem;
+
+      @include screenMedium {
+        width: 30rem;
+      }
+    }
+  }
+}

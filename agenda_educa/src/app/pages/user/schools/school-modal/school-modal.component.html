@@ -1,0 +1,15 @@
+<form class="row" [formGroup]="form">
+  <mat-form-field appearance="outline" class="col-12">
+    <mat-label>Selecione a Escola</mat-label>
+    <mat-select formControlName="school">
+      <mat-option *ngFor="let school of (schools | async)" [value]="{id: school.id, school: school.name}" >
+        {{school.name}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+</form>
+
+<div class="button">
+  <button id="button-cancel" mat-raised-button (click)="close()">Cancelar</button>
+  <button (click)="confirm()" [disabled]="form.invalid" mat-raised-button color="primary">Confirmar</button>
+</div>

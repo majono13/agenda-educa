@@ -22,11 +22,11 @@
           Escolas
         </mat-panel-title>
       </mat-expansion-panel-header>
-      <p>
+      <p (click)="openSchools()" routerLinkActive="router-active">
         Minhas Escolas
         <mat-icon>school</mat-icon>
       </p>
-      <p>
+      <p routerLink="/user/nova-escola" routerLinkActive="router-active">
         <span>Nova Escola</span>
         <mat-icon>history_edu</mat-icon>
       </p>
@@ -41,19 +41,19 @@
       </button>
 
       <div *ngIf="showColumn === 'alunos'">
-        <p>Meus alunos </p>
-        <p>Novo aluno</p>
+        <p routerLink="/user/alunos">Meus alunos </p>
+        <p routerLink="/user/novo-aluno">Novo aluno</p>
       </div>
     </section>
 
     <section>
-      <button mat-icon-button (click)="show('provas')">
-        <mat-icon matTooltip="Provas">school</mat-icon>
+      <button mat-icon-button (click)="show('escolas')">
+        <mat-icon matTooltip="Escolas">school</mat-icon>
       </button>
 
-      <div *ngIf="showColumn === 'provas'">
-        <p>Provas </p>
-        <p>Nova Prova</p>
+      <div *ngIf="showColumn === 'escolas'">
+        <p (click)="openSchools()">Minas Escolas</p>
+        <p>Nova Escola</p>
       </div>
     </section>
 </div>
