@@ -1,4 +1,6 @@
 import { Component, HostListener, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { SchoolModalComponent } from 'src/app/pages/user/schools/school-modal/school-modal.component';
 
 @Component({
   selector: 'app-sidenav',
@@ -8,7 +10,7 @@ import { Component, HostListener, OnInit } from '@angular/core';
 export class SidenavComponent implements OnInit {
   screenWidth: number;
   showColumn: string = '';
-  constructor() {}
+  constructor(public dialog: MatDialog) {}
 
   ngOnInit(): void {
     this.screenWidth = window.innerWidth;
@@ -22,5 +24,9 @@ export class SidenavComponent implements OnInit {
   show(column: string) {
     if (column === this.showColumn) this.showColumn = '';
     else this.showColumn = column;
+  }
+
+  openSchools() {
+    this.dialog.open(SchoolModalComponent);
   }
 }

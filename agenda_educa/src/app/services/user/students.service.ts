@@ -19,7 +19,8 @@ export class StudentsService {
     page: number,
     pageSize: number,
     filter: string,
-    teacherId: number
+    teacherId: number,
+    schoolId: number
   ): Observable<Response<PagedResponse<StudentDetail[]>>> {
     page++;
     const orderBy = 'Name';
@@ -27,7 +28,7 @@ export class StudentsService {
 
     return this._http
       .get<Response<any>>(
-        `${this.url}/pagination/${teacherId}?Page=${page}&PageSize=${pageSize}&OrderByPropety=${orderBy}&Name=${filter}`
+        `${this.url}/pagination/${teacherId}?Page=${page}&PageSize=${pageSize}&OrderByPropety=${orderBy}&Name=${filter}&SchoolId=${schoolId}`
       )
       .pipe(delay(1000));
   }
@@ -35,5 +36,17 @@ export class StudentsService {
   createStudent(student: Student) {
    return this._http.post<Response<Student>>(this.url, student)
    .pipe(take(1));
+  }
+
+  getStudentById(id: number) {
+    return this._http.get<Response<StudentDetail>>(`${this.url}/get-student/${id}`);
+  }
+
+  editStudent(student: Student) {
+    return this._http.put<Response<StudentDetail>>(`${this.url}`, student);
+  }
+
+  deleteStudent(id: number) {
+    return this._http.delete<Response<StudentDetail>>(`${this.url}/${id}`).pipe(take(1));
   }
 }

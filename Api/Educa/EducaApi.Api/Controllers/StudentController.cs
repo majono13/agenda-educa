@@ -84,7 +84,7 @@ namespace EducaApi.Api.Controllers
         //Método delete para deletar aluno salvo no banco
         [HttpDelete]
         [Route("{id}")]
-        public async Task<ActionResult> CreateStudentAsync(int id)
+        public async Task<ActionResult> DeleteStudentAsync(int id)
         {
             var result = await _studentService.DeleteStudentAsync(id);
 

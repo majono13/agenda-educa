@@ -1,6 +1,7 @@
 @use "./styles/theme/custom-theme.scss";
 @use "./styles/variables.scss" as *;
 @use "./styles/bootstrap/bootstrap-grid.min.css";
+@use "./styles/mixins.scss" as *;
 
 html,
 body {
@@ -15,4 +16,8 @@ body {
 .row {
   padding: 0;
   margin: 0;
+}
+
+button {
+  @include button;
 }

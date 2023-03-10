@@ -1,0 +1,15 @@
+@use "../../../../../styles/index.scss" as *;
+
+
+.button {
+  display: flex;
+  justify-content: flex-end;
+
+  button {
+    margin: .5rem
+  }
+
+  #button-cancel {
+    @include button-white;
+  }
+}

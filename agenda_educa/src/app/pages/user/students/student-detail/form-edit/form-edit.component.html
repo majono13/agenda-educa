@@ -1,0 +1,36 @@
+<form [formGroup]="form" *ngIf="student">
+  <mat-form-field appearance="outline" class="col-12">
+    <mat-label>Nome</mat-label>
+    <input autocomplete="off" matInput placeholder="Digite o nome completo do aluno" formControlName="name">
+    <mat-error *ngIf="form.controls['name']?.errors?.['required']">Campo obrigatório*</mat-error>
+    <mat-error *ngIf="form.controls['name']?.errors?.['minlength']">O nome deve ter no minímo 3 caracteres</mat-error>
+    <mat-error *ngIf="form.controls['name']?.errors?.['maxlength']">O nome deve ter no máximo 50 caracteres</mat-error>
+  </mat-form-field>
+
+  <mat-form-field appearance="outline" class="col-12 col-md-6">
+    <mat-label>Classe</mat-label>
+    <input autocomplete="off" matInput placeholder="Digite a classe do aluno" formControlName="class">
+    <mat-error *ngIf="form.controls['class']?.errors?.['required']">Campo obrigatório*</mat-error>
+    <mat-error *ngIf="form.controls['class']?.errors?.['maxlength']">Classe deve ter no máximo 15 caracteres</mat-error>
+  </mat-form-field>
+
+  <mat-form-field appearance="outline" class="col-12 col-md-6">
+    <mat-label>{{student?.school}}</mat-label>
+    <mat-select formControlName="school"  [placeholder]="student?.school">
+      <mat-option *ngFor="let school of (schools | async)" [value]="school?.id">
+        {{school.name}}
+      </mat-option>
+    </mat-select>
+    <mat-error *ngIf="form.controls['school']?.errors?.['required']">Selecione a escola*</mat-error>
+  </mat-form-field>
+
+  <mat-form-field appearance="outline" class="col-12">
+    <mat-label>Observações (Opcional)</mat-label>
+    <textarea matInput formControlName="observations"></textarea>
+    <mat-error *ngIf="form.controls['observations']?.errors?.['maxlength']"></mat-error>
+  </mat-form-field>
+
+  <div class="button">
+    <button (click)="salve()" mat-raised-button color="primary" [disabled]="form.invalid">Salvar</button>
+  </div>
+</form>

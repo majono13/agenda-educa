@@ -7,7 +7,7 @@
     <app-step-two [step2Form]="step2Form" [email]="step1Form.value.email" *ngIf="nextStep"></app-step-two>
 
       <div class="button">
-        <button *ngIf="!nextStep"  mat-button id="back-button" routerLink="../">Voltar</button>
+        <button *ngIf="!nextStep"  mat-button id="back-button" (click)="back()">Voltar</button>
         <button *ngIf="!nextStep" (click)="createUser()" [disabled]="step1Form.invalid" mat-raised-button color="primary">
           Próximo
           <app-spinner *ngIf="loading"></app-spinner>

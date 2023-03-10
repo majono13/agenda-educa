@@ -4,11 +4,6 @@ using EducaApi.Application.DTOs.Validations;
 using EducaApi.Application.Services.Interfaces;
 using EducaApi.Domain.Entities;
 using EducaApi.Domain.Repositories;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace EducaApi.Application.Services
 {
@@ -100,6 +95,18 @@ namespace EducaApi.Application.Services
                 return ResultService.Fail<ICollection<SchoolDTO>>
                     ("Não foram encontrados dados correspondentes a requisição");
             return ResultService.Ok(_mapper.Map<ICollection<SchoolDTO>>(schools));
+        }
+        #endregion
+
+        #region Get School By Id
+        public async Task<ResultService<SchoolDTO>> GetSchoolByIdAsync(int schoolId)
+        {
+            var school = await _schoolRepository.GetSchoolByIdAsync(schoolId);
+
+            if (school == null)
+                return ResultService.Fail<SchoolDTO>("Não foram encontrados dados correspondentes a requisição");
+
+            return ResultService.Ok<SchoolDTO>(_mapper.Map<SchoolDTO>(school));
         }
         #endregion
     }

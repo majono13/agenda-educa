@@ -1,0 +1,42 @@
+@use "../../../../../styles/index.scss" as *;
+
+input[type=number]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+
+}
+
+.content {
+  height: 80vh;
+  margin-top: 2rem;
+  h1 {
+    margin-left: 1rem;
+    padding-bottom: .5rem;
+    border-bottom: 1px solid $primary-500;
+    width: 140px;
+    @include paragraphMedium;
+    color: $primary-500;
+
+    @include screenMedium {
+      width: 190px;
+      @include paragraphLarge;
+    }
+  }
+
+  .buttons {
+    display: flex;
+    justify-content: flex-end;
+
+    button {
+      margin: .5rem
+    }
+
+    #back-button {
+      @include button-white;
+      background-color: $gray;
+    }
+  }
+
+  mat-hint {
+    color: red;
+  }
+}

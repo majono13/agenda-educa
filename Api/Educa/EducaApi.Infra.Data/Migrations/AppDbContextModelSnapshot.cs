@@ -83,6 +83,10 @@ namespace EducaApi.Infra.Data.Migrations
                         .IsRequired()
                         .HasColumnType("longtext");
 
+                    b.Property<string>("Observations")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
                     b.Property<int>("SchoolId")
                         .HasColumnType("int");
 

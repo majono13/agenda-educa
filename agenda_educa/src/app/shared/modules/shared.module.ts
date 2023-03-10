@@ -4,7 +4,7 @@ import { CommonModule } from '@angular/common';
 //Módulos
 import { MaterialModule } from './material.module';
 import { HttpClientModule } from '@angular/common/http';
-import { ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
 //Componentes
 import { LogoComponent } from '../components/logo/logo.component';
@@ -14,7 +14,8 @@ import { NavbarComponent } from '../components/navbar/navbar.component';
 import { LoadingScreenComponent } from '../components/loading-screen/loading-screen.component';
 import { SearchInputComponent } from '../components/search-input/search-input.component';
 import { NotFoundResultsComponent } from '../components/not-found-results/not-found-results.component';
-
+import { SchoolModalComponent } from 'src/app/pages/user/schools/school-modal/school-modal.component';
+import { PageNotFoundComponent } from '../components/page-not-found/page-not-found.component';
 //Serviços
 import { SnackbarService } from 'src/app/services/shared/snackbar.service';
 import { TeacherService } from 'src/app/services/shared/teacher.service';
@@ -28,6 +29,8 @@ import { TeacherService } from 'src/app/services/shared/teacher.service';
     LoadingScreenComponent,
     SearchInputComponent,
     NotFoundResultsComponent,
+    SchoolModalComponent,
+    PageNotFoundComponent,
   ],
   imports: [
     CommonModule,
@@ -45,6 +48,8 @@ import { TeacherService } from 'src/app/services/shared/teacher.service';
     SearchInputComponent,
     ReactiveFormsModule,
     NotFoundResultsComponent,
+    SchoolModalComponent,
+    PageNotFoundComponent,
   ],
   providers: [SnackbarService, TeacherService],
 })

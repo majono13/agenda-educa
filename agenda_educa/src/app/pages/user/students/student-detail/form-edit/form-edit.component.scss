@@ -1,0 +1,22 @@
+@use "../../../../../../styles/index.scss" as *;
+
+form {
+  @include animation-rigth-to-left;
+
+  textarea {
+    @include textarea;
+  }
+
+  .button {
+    display: flex;
+    justify-content: flex-end;
+    button {
+      margin: .5rem;
+    }
+    #button-cancel {
+      @include button-white;
+    }
+  }
+}
+
+@include scroll;

@@ -1,0 +1,38 @@
+<div class="content">
+
+  <div *ngIf="!school" class="loading">
+  <app-loading-screen></app-loading-screen>
+</div>
+
+  <mat-card [ngClass]="{'normalize': !showStudentsList}" *ngIf="school">
+    <div *ngIf="!showStudentsList; else hideButton">
+      <mat-card-header>
+        <mat-card-title>{{school?.name}}</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <p><span>Enderço: </span> {{school?.street}}, {{school?.number}}</p>
+        <p><span>Bairro: </span>{{school?.district}}</p>
+        <p><span>Cidade: </span>{{school?.city}} - {{school?.state}}</p>
+        <p><span>Cep: </span>{{school?.cep}}</p>
+        <p (click)="studentsList()" class="show-students">Exibir lista de Alunos</p>
+      </mat-card-content>
+      <mat-card-actions>
+        <button (click)="back()" id="back-button" mat-raised-button>Voltar</button>
+        <button *ngIf="!onEdit" mat-raised-button color="primary" (click)="edit()">Editar</button>
+        <button *ngIf="onEdit" mat-raised-button color="primary" (click)="edit()">Cancelar</button>
+      </mat-card-actions>
+    </div>
+    <ng-template #hideButton>
+      <p (click)="studentsList()" class="show-students">Ocultar lista de Alunos</p>
+    </ng-template>
+  </mat-card>
+
+
+  <div class="form-edit" *ngIf="onEdit">
+    <app-add-school (atualize)="atualize()" [school]="school"[onEdit]="onEdit"></app-add-school>
+  </div>
+
+  <div class="students-list" *ngIf="showStudentsList">
+    <app-students [schoolId]="school?.id"></app-students>
+  </div>
+</div>

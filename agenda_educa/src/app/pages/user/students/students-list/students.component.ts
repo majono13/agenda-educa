@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, AfterViewInit } from '@angular/core';
+import { Component, OnInit, ViewChild, AfterViewInit, Input } from '@angular/core';
 import { Student } from 'src/app/models/student.model';
 import { StudentsService } from 'src/app/services/user/students.service';
 import { TeacherService } from 'src/app/services/shared/teacher.service';
@@ -30,6 +30,8 @@ export class StudentsComponent implements OnInit, AfterViewInit {
   loading: boolean = true;
   dataFound: boolean = null;
 
+  @Input('schoolId') schoolId = 0;
+
   constructor(
     private _studentsService: StudentsService,
     private _teacherService: TeacherService,
@@ -58,7 +60,6 @@ export class StudentsComponent implements OnInit, AfterViewInit {
   ngAfterViewInit(): void {
     // Captura evento de mudança na paginação
     this.paginator.page.subscribe((value: string) => {
-      console.log(value);
       this.loadList(this.teacherId);
     });
   }
@@ -81,7 +82,8 @@ export class StudentsComponent implements OnInit, AfterViewInit {
         this.paginator?.pageIndex ?? 0,
         this.paginator?.pageSize ?? Number(this.paginatorHelper?.PageSize),
         this.filter,
-        teacherId
+        teacherId,
+        this.schoolId
       )
       .toPromise()
       .then((res) => {

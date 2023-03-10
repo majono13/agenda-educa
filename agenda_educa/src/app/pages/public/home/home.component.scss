@@ -1,0 +1,222 @@
+@use "../../../../styles/index.scss" as *;
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&display=swap');
+
+$font: 'Playfair Display', serif;
+
+.content {
+  min-height: 100vh;
+  max-width: 100%;
+  background-color: $black;
+
+  mat-toolbar {
+    @include animation-top-to-bottom;
+    background-image: linear-gradient(
+      to left,
+      $secondary-300,
+      $secondary-500,
+      $secondary-800,
+      $primary-300,
+      $primary-500
+    );
+    border-bottom: 1px solid $primary-800;
+    opacity: 0.8;
+    justify-content: flex-end;
+
+    .actions {
+      display: flex;
+      p {
+        margin: 1rem;
+        color: $primary-800;
+        @include paragraphSmall;
+        font-weight: 500;
+        cursor: pointer;
+        border-bottom: 1px solid transparent;
+        border-radius: 5px;
+        padding: 0.7rem;
+        transition: 0.5s;
+        &:hover {
+          box-shadow: 1px 1px 5px $primary-800;
+        }
+      }
+    }
+  }
+
+  main {
+    @include animation-top-to-bottom;
+    .section-container {
+      max-width: 1500px;
+      display: flex;
+      margin: auto;
+      justify-content: center;
+    }
+
+    header {
+      display: flex;
+      align-items: center;
+      background-image: linear-gradient(
+        to left,
+        $secondary-300,
+        $secondary-500,
+        $secondary-800,
+        $primary-300,
+        $primary-500
+      );
+      padding-top: 1rem;
+
+      //Texto do header
+      .text {
+        @include screenMedium {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+        }
+
+        h1 {
+          font-family: $font;
+          font-size: 2rem;
+          color: $terciary-500;
+          text-align: center;
+
+          @include screenSmall {
+          }
+
+          @include screenMedium {
+            font-size: 3rem;
+          }
+        }
+
+        p {
+          padding-top: 1rem;
+          font-size: 1.2rem;
+          color: white;
+          text-align: justify;
+
+          span {
+            font-family: $font;
+            font-weight: 500;
+            color: $terciary-500;
+          }
+        }
+
+        button {
+          margin: 1rem 0;
+          width: 100%;
+          box-shadow: 1px 1px 5px $primary-600;
+        }
+      }
+
+      //Imagem do header
+      .img {
+        display: flex;
+        align-items: flex-end;
+        justify-content: center;
+
+        img {
+          max-width: 200px;
+          height: 200px;
+          @include screenMedium {
+            max-width: 400px;
+            height: 400px;
+          }
+        }
+      }
+    }
+
+    .section-2 {
+      margin-top: 5rem;
+      margin-bottom: 5rem;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      h2 {
+        color: $secondary-300;
+        font-family: $font;
+        font-size: 2rem;
+      }
+
+      p {
+        color: white;
+      }
+
+      button {
+        width: 90%;
+      }
+
+     .books-img {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 250px;
+        height: 250px;
+        border-radius: 50%;
+       background-image: linear-gradient(to right, $terciary-500, $secondary-800);
+        img {
+          max-width: 280px;
+          max-height: 200px;
+          transition: 1s;
+          &:hover {
+            transform: scale(1.1);
+          }
+        }
+      }
+    }
+
+    .section-3 {
+     background-color: $terciary-500;
+      width: 100%;
+      height: 400px;
+      overflow-y: scroll;
+
+      @include screenMedium {
+        display: flex;
+        align-items: center;
+      }
+
+      section {
+        div {
+          @include screenMedium {
+            display: flex;
+            justify-content: space-around;
+          }
+        }
+        mat-card {
+          margin: 1rem;
+          max-width: 250px;
+          min-height: 300px;
+          border-radius: 10px;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: space-around;
+          background-color: $primary-800;
+        }
+
+        h3 {
+          @include paragraphMedium;
+          color: white;
+          font-size: 1.5rem;
+          font-weight: 500;
+        }
+
+        p {
+          color: white;
+          font-size: 1.1rem;
+        }
+
+        mat-icon {
+          color: $primary-500;
+          font-size: 3rem;
+          background-color: white;
+          padding: 15px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          border-radius: 15px;
+        }
+      }
+    }
+  }
+}
+
+@include scroll;
