@@ -1,6 +1,10 @@
 @use "../../../../../styles/index.scss" as *;
+
+.animate {
+  @include animation-rigth-to-left;
+}
+
 form {
   //mixins
-  @include animation-rigth-to-left;
   @include mat-form;
 }

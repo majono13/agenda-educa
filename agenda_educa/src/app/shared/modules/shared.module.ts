@@ -16,6 +16,9 @@ import { SearchInputComponent } from '../components/search-input/search-input.co
 import { NotFoundResultsComponent } from '../components/not-found-results/not-found-results.component';
 import { SchoolModalComponent } from 'src/app/pages/user/schools/school-modal/school-modal.component';
 import { PageNotFoundComponent } from '../components/page-not-found/page-not-found.component';
+import { StepTwoComponent } from 'src/app/pages/auth/register/step-two/step-two.component';
+import { DialogComponent } from '../components/dialog/dialog.component';
+
 //Serviços
 import { SnackbarService } from 'src/app/services/shared/snackbar.service';
 import { TeacherService } from 'src/app/services/shared/teacher.service';
@@ -31,6 +34,8 @@ import { TeacherService } from 'src/app/services/shared/teacher.service';
     NotFoundResultsComponent,
     SchoolModalComponent,
     PageNotFoundComponent,
+    StepTwoComponent,
+    DialogComponent,
   ],
   imports: [
     CommonModule,
@@ -50,6 +55,8 @@ import { TeacherService } from 'src/app/services/shared/teacher.service';
     NotFoundResultsComponent,
     SchoolModalComponent,
     PageNotFoundComponent,
+    StepTwoComponent,
+    DialogComponent,
   ],
   providers: [SnackbarService, TeacherService],
 })

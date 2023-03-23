@@ -14,6 +14,7 @@ export class StudentDetailComponent implements OnInit {
 
   student: StudentDetail;
   onEdit: boolean = false;
+  birthday: string;
 
   constructor(private _route: ActivatedRoute,
     private _router: Router,
@@ -32,8 +33,10 @@ export class StudentDetailComponent implements OnInit {
     .subscribe({
       error: err => this._router.navigate(['/page-not-found']),
       next: res => {
-        if(res?.isSuccess)
+        if(res?.isSuccess) {
           this.student = res?.data;
+          this.getBirthDay(res?.data?.birthday);
+        }
       }
     });
   }
@@ -51,6 +54,12 @@ export class StudentDetailComponent implements OnInit {
         this._loaction.back();
       }
     })
+  }
+
+  getBirthDay(date: Date) {
+    if(date) {
+      this.birthday =  this._studentsService.formatBirthday(date);
+    }
   }
 
   back() {

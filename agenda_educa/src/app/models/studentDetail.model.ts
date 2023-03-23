@@ -5,4 +5,6 @@ export interface StudentDetail {
   class: string;
   teacherId: number;
   observations: string;
+  parentsContact?: string;
+  birthday?: Date;
 }

@@ -2,5 +2,7 @@
     "appService.zipIgnorePattern": [
         "node_modules{,/**}",
         ".vscode{,/**}"
-    ]
+    ],
+    "appService.defaultWebAppToDeploy": "/subscriptions/2915ae95-7f37-4610-8608-81970c4a0a03/resourceGroups/BdTeste/providers/Microsoft.Web/sites/agenda-educa-front",
+    "appService.deploySubpath": "dist"
 }
