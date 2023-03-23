@@ -35,7 +35,9 @@ export class FormEditComponent implements OnInit {
       name: [this.student?.name, [Validators.required, Validators.minLength(3), Validators.maxLength(50)]],
       class: [this.student?.class, [Validators.required, Validators.maxLength(15)]],
       school: ['', [Validators.required]],
-      observations: [this.student?.observations, [Validators.maxLength(1500)]]
+      observations: [this.student?.observations, [Validators.maxLength(1500)]],
+      parentsContact: [this.student?.parentsContact, [Validators.maxLength(17)]],
+      birthday: [this.student?.birthday],
     });
 
     this.getSchools();
@@ -47,26 +49,33 @@ export class FormEditComponent implements OnInit {
   }
 
   salve() {
-    const student: Student = {
-      Name: this.form.value?.name,
-      Class: this.form.value?.class,
-      SchoolId: this.form.value?.school,
-      Observations: this.form.value?.observations,
-      TeacherId: this.student.teacherId,
-      id: this.student.id,
-    };
 
-    console.log(student)
+    if(!this.form.value.school)
+      alert('Selecione a escola!')
 
-    this._studentsService.editStudent(student)
-      .subscribe({
-        error: err =>
-          this._snackBar.open(err?.error?.message, 3000),
-        next: value => {
-          this._snackBar.open(`Aluno editado com sucesso!`, 3000)
-          this.onEdit = false;
-          this.__location.back();
-        }
-      });
+      else {
+        const student: Student = {
+          Name: this.form.value?.name,
+          Class: this.form.value?.class,
+          SchoolId: this.form.value?.school,
+          Observations: this.form.value?.observations,
+          TeacherId: this.student.teacherId,
+          id: this.student.id,
+          ParentsContact: this.form.value.parentsContact ?? null,
+          Birthday: this.form.value.birthday ?? null
+        };
+
+        this._studentsService.editStudent(student)
+          .subscribe({
+            error: err =>
+              this._snackBar.open(err?.error?.message, 3000),
+            next: value => {
+              this._snackBar.open(`Aluno editado com sucesso!`, 3000)
+              this.onEdit = false;
+              this.__location.back();
+            }
+          });
+      }
+
   }
 }

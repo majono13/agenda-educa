@@ -9,6 +9,7 @@ import { FormGroup } from '@angular/forms';
 export class StepTwoComponent implements OnInit {
   @Input('step2Form') step2Form: FormGroup;
   @Input('email') email: string;
+  @Input('animationOn') animationOn  = true;
   constructor() {}
 
   ngOnInit(): void {}

@@ -49,4 +49,14 @@ export class StudentsService {
   deleteStudent(id: number) {
     return this._http.delete<Response<StudentDetail>>(`${this.url}/${id}`).pipe(take(1));
   }
+
+  formatBirthday(date: Date) {
+    const dateBirthday = new Date(date);
+
+    if(dateBirthday.getMonth() < 9)
+    return `${dateBirthday.getDate()}/0${dateBirthday.getMonth() + 1}/${dateBirthday.getFullYear()}`;
+
+    return `${dateBirthday.getDate()}/${dateBirthday.getMonth() + 1}/${dateBirthday.getFullYear()}`;
+
+  }
 }

@@ -24,6 +24,20 @@
     <mat-error *ngIf="form.controls['school']?.errors?.['required']">Selecione a escola*</mat-error>
   </mat-form-field>
 
+  <mat-form-field appearance="outline" class="col-12 col-md-6">
+    <mat-label>Data de Nascimento (opcional)</mat-label>
+    <input matInput [matDatepicker]="dp3" readonly formControlName="birthday">
+    <mat-datepicker-toggle matIconSuffix [for]="dp3"></mat-datepicker-toggle>
+    <mat-datepicker #dp3 disabled="false"></mat-datepicker>
+  </mat-form-field>
+
+
+  <mat-form-field appearance="outline" class="col-12 col-md-6">
+    <mat-label>Contato dos Pais (Opcional)</mat-label>
+    <input autocomplete="off" matInput placeholder="Digite a classe do aluno" formControlName="parentsContact">
+    <mat-error *ngIf="form.controls['parentsContact'].errors?.['maxlength']">Telefone deve ter no máximo 17 caracteres</mat-error>
+  </mat-form-field>
+
   <mat-form-field appearance="outline" class="col-12">
     <mat-label>Observações (Opcional)</mat-label>
     <textarea matInput formControlName="observations"></textarea>
@@ -31,6 +45,6 @@
   </mat-form-field>
 
   <div class="button">
-    <button (click)="salve()" mat-raised-button color="primary" [disabled]="form.invalid">Salvar</button>
+    <button (click)="salve()" mat-raised-button color="primary">Salvar</button>
   </div>
 </form>

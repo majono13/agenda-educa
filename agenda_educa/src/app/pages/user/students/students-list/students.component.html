@@ -1,6 +1,6 @@
 <div class="content">
 
-  <div *ngIf="loading && filter.length == 0; else main"
+  <div *ngIf="loading && filter?.length == 0; else main"
     class="loading">
     <app-loading-screen></app-loading-screen>
   </div>
@@ -33,12 +33,12 @@
         <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
         <tr  mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
       </table>
-      <section *ngIf="!dataFound && filter.length > 0 ">
+      <section *ngIf="!dataFound && filter?.length > 0 ">
         <app-not-found-results
           message='Não foram encontrados dados correspondentes a "{{filter}}"'></app-not-found-results>
       </section>
 
-      <section *ngIf="dataSource?.data.length == 0 && filter.length == 0 ">
+      <section *ngIf="dataSource?.data.length == 0 && !filter">
         <app-not-found-results
           message='Nenhum aluno Cadastrado'></app-not-found-results>
       </section>

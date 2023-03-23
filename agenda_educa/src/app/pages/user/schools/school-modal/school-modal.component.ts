@@ -41,7 +41,6 @@ export class SchoolModalComponent implements OnInit {
 
   confirm() {
    const url = this.configUrl();
-    console.log(this.form.value.school)
     this._router.navigate([`/user/escolas/${this.form.value.school?.id}/${url}`]);
     this.close();
   }

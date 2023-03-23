@@ -32,6 +32,20 @@ namespace EducaApi.Application.DTOs.Validations
                .MaximumLength(15)
                .WithMessage("O nome deve ter no máximo 15 caracteres");
             #endregion
+
+            #region Observations
+
+            RuleFor(x => x.Observations)
+                .MaximumLength(1500);
+
+            #endregion
+
+            #region ParentsContact
+
+            RuleFor(x => x.ParentsContact)
+                .MaximumLength(17);
+
+            #endregion
         }
     }
 }

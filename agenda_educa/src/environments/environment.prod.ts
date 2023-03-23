@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  URL: 'https://localhost:7079/api',
+ URL: 'https://agenda-educa.azurewebsites.net/api',
 };

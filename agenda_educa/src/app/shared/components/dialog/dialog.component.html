@@ -1,0 +1,8 @@
+<div class="content">
+  <h1>Confirme seus dados para continuar</h1>
+  <app-step-two [email]="data" [step2Form]="form" [animationOn]="false"></app-step-two>
+
+  <div class="button">
+    <button mat-raised-button color="primary" (click)="salve()" [disabled]="form.invalid">Confirmar</button>
+  </div>
+</div>

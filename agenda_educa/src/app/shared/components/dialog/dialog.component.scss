@@ -1,0 +1,11 @@
+@use '../../../../styles/index.scss' as *;
+
+.content {
+  max-width: 100%;
+  overflow-x: hidden;
+
+  h1 {
+    @include paragraphMedium;
+    color: $primary-600;
+  }
+}

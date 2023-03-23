@@ -14,6 +14,8 @@
       </mat-card-header>
       <mat-card-content>
         <p>Classe: <span class="classe">{{student?.class}}</span></p>
+        <p>Data de Nascimento: <span class="classe" *ngIf="birthday != null">{{birthday}}</span></p>
+        <p>Contato dos Pais: <span class="classe">{{student?.parentsContact}}</span></p>
         <p>{{student?.observations}}</p>
       </mat-card-content>
       <mat-card-actions>

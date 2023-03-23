@@ -5,4 +5,6 @@ export interface Student {
   Class: string;
   TeacherId: number;
   Observations?: string;
+  ParentsContact?: string;
+  Birthday?: Date;
 }

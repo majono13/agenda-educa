@@ -7,7 +7,9 @@ namespace EducaApi.Domain.Entities
         public int Id { get; private set; }
         public string Name { get; private set; }
         public string Class { get; private set; }       
-        public string Observations { get; private set; }
+        public string? Observations { get; private set; }
+        public DateTime? Birthday { get; private set; }
+        public string?  ParentsContact { get; private set; }
         public int TeacherId { get; private set; }
         public virtual Teacher Teacher { get;private set; }
         public virtual School School { get; private set; }
@@ -17,23 +19,22 @@ namespace EducaApi.Domain.Entities
         public Student()
         {}
 
-        public Student(string name, string @class, string? observations)
+        public Student(string name, string @class, string? observations, DateTime? birthday, string? parentsContact)
         {
-            Validation(name, @class);
-            Observations = observations;
+            Validation(name, @class, observations, birthday, parentsContact);
+
         }
 
-        public Student(int id, string name, string @class, string? observations)
+        public Student(int id, string name, string @class, string? observations, DateTime? birthday, string? parentsContact)
         {
 
             DomainValidationException.When(id < 0, "Informe o ID");
             Id = id;
 
-            Validation(name, @class);
-            Observations = observations;
+            Validation(name, @class, observations, birthday, parentsContact);
         }
 
-        private void Validation(string name, string @class)
+        private void Validation(string name, string @class, string? observations, DateTime? birthday, string? parentsContact)
         {
             #region Name
             DomainValidationException.When(string.IsNullOrEmpty(name), "Informe o nome do aluno");
@@ -46,8 +47,21 @@ namespace EducaApi.Domain.Entities
             DomainValidationException.When(@class.Length > 15, "A classe deve ter no máximo 15 caracteres");
             #endregion
 
+            #region Observations
+            DomainValidationException.When(observations?.Length > 1500, "Campo deve ter no máximo 1500 caracteres");
+            #endregion
+
+            #region ParentsContact
+            DomainValidationException.When(parentsContact?.Length > 17, "Campo deve ter no máximo 17 caracteres");
+            #endregion
+
+
             Name = name;
             Class = @class;
+            Observations = observations;
+            Birthday = birthday;
+            ParentsContact = parentsContact;
+
         }
     }
 }

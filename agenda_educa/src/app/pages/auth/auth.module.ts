@@ -12,7 +12,6 @@ import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
 import { ResetPasswordComponent } from './reset-password/reset-password.component';
 import { StepOneComponent } from './register/step-one/step-one.component';
-import { StepTwoComponent } from './register/step-two/step-two.component';
 
 //Interceptor
 import { HttpRequestInterceptor } from 'src/app/interceptors/http.interceptor';
@@ -24,7 +23,6 @@ import { HTTP_INTERCEPTORS } from '@angular/common/http';
     LoginComponent,
     ResetPasswordComponent,
     StepOneComponent,
-    StepTwoComponent,
   ],
   imports: [
     CommonModule,

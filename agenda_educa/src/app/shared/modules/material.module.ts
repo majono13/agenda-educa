@@ -18,6 +18,10 @@ import {
 import {MatSelectModule} from '@angular/material/select';
 import {MatCardModule} from '@angular/material/card';
 import {MatDialogModule} from '@angular/material/dialog';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
+
+
 
 /** Configurações do paginator **/
 const rangeLabel = (page: number, pageSize: number, length: number) => {
@@ -60,6 +64,8 @@ export function getIntl() {
     MatSelectModule,
     MatCardModule,
     MatDialogModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
   ],
   exports: [
     MatToolbarModule,
@@ -76,6 +82,8 @@ export function getIntl() {
     MatSelectModule,
     MatCardModule,
     MatDialogModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
   ],
   providers: [{ provide: MatPaginatorIntl, useValue: getIntl() }],
 })
